@@ -1,16 +1,66 @@
 .nav-bar {
-    width: 200px;
-    border-right-color: grey;
-    border-right-style: solid;
-    border-right-width: 2px;
-
+    display: flex;
+    order: 1;
+    padding:0 25px;
+    border-right: solid 1px var(--disabled-grey);
+    border-top: none;
     ul {
-        margin-left: 15px;
+        padding: 10px 0;
         list-style-type: none;
+        overflow:auto;
+        position: fixed;
+        display: flex;
         li {
+            margin: 15px 0;
             a {
                 text-decoration: none;
+                font-size: 1.7rem;
+                color: white;            }
+            i {
+                margin-right: 10px;
+                width: 1.7rem;
+                height: 1.7rem;
             }
+        }
+        li > * {
+            display: flex
+        }
+        li:last-child {
+            margin-top: auto;
+        }
+
+        /* HEADER */
+        li:first-child {
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            border-bottom: solid 1px var(--disabled-grey);
+            a {
+                background: var(--yqni13-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        /* NOT ACTIVE YET */
+        li:nth-child(3)>a {
+            color: var(--disabled-grey);
+            cursor: default;
+        }
+        li:nth-child(4)>a {
+            color: var(--disabled-grey);
+            cursor: default;
+        }
+        li:nth-child(5)>a {
+            color: var(--disabled-grey);
+            cursor: default;
+        }
+        li:nth-child(6)>a {
+            color: var(--disabled-grey);
+            cursor: default;
+        }
+        li:nth-child(7)>a {
+            color: var(--disabled-grey);
+            cursor: default;
         }
     }
 }

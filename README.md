@@ -1,5 +1,5 @@
 # yqni13 WEB_clock
-$\texttt{\color{teal}{v1.0.0}}$
+$\texttt{\color{teal}{v1.1.1}}$
 
 ## Screenshot clock
 <div align="center">
@@ -21,10 +21,12 @@ $\texttt{\color{teal}{v1.0.0}}$
 
 ## Updates
 
-### $\textsf{last\ update\ 1.0.0\ >>\ {\color{pink}1.?.?}}$
+### $\textsf{last\ update\ 1.0.0\ >>\ {\color{pink}1.1.1}}$
 
+- $\textsf{\color{orange}Change:}$ Responsive navbar added.
 - $\textsf{\color{red}Bugfix:}$ Sunday is displayed correctly in date output. [Before: Only 'undefined' as result shown sundays.]
 
+<br>
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
@@ -34,6 +36,8 @@ $\texttt{\color{teal}{v1.0.0}}$
     <dd>- option to select different date formats</dd>
     <dd>- option to select different time formats</dd>
 </dl>
+
+<br>
 
 ### Aimed objectives for next $\textsf{\color{cyan}major}$ update:
 <dl>

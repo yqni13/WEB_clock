@@ -3,37 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/icon type" href="assets/img/favicon/favicon_clock.ico" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap">
-    <script type="text/javascript" src="https://livejs.com/live.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/icon type" href="assets/favicon/favicon_clock.ico" />
     <title>CLOCK</title>
 </head>
 <body>
     <nav class="nav-bar">
         <ul>
-            <li>
-                <a href="/"><i class="icon-BurgerMenu"></i></a>
+            <li class="enabled-item">
+                <a href=""><i class="icon-GitHub"></i>yqni13 WEB_clock</a>
             </li>
-            <li>
-                <a href="/"><i class="icon-Clock"></i>Clock</a>
+            <li class="disabled-item">
+                <a href="#"><i class="icon-Clock"></i>Clock</a>
             </li>
-            <li>
-                <a href="/"><i class="icon-WorldClock"></i>World Clock</a>
+            <li class="disabled-item">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                    <i class="icon-WorldClock" onmouseover="lockedImgOver(this)" onmouseout="lockedImgOut(this, 'icon-WorldClock')"></i>
+                    World Clock
+                </a>
             </li>
-            <li>
-                <a href="/"><i class="icon-Timer"></i>Timer</a>
+            <li class="disabled-item" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                <a href="#">
+                    <i class="icon-Timer" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-Timer')"></i>
+                    Timer
+                </a>
             </li>
-            <li>
-                <a href="/"><i class="icon-SpecialTimer"></i>Timer (Pomodoro)</a>
+            <li class="disabled-item" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                <a href="#">
+                    <i class="icon-SpecialTimer2" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-SpecialTimer2')"></i>
+                    Timer (Pomodoro)
+                </a>
             </li>
-            <li>
-                <a href="/"><i class="icon-SpecialTimer"></i>Timer (60-60-30)</a>
+            <li class="disabled-item" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                <a href="#">
+                    <i class="icon-SpecialTimer1" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-SpecialTimer1')"></i>
+                    Timer (60-60-30)
+                </a>
             </li>
-            <li>
-                <a href="/"><i class="icon-Settings"></i>Settings</a>
+            <li class="disabled-item" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                <a href="#">
+                    <i class="icon-Settings" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-Settings')"></i>
+                    Settings
+                </a>
             </li>
         </ul>
     </nav>
@@ -53,6 +70,7 @@
             </div>
         </div>
     </div>
+
     <script src="main.js"></script>
 </body>
 </html>

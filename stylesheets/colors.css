@@ -3,4 +3,7 @@
     --bg-light: white; 
 
     --shadow-blue: rgb(0,0,234);
+    --disabled-grey: rgba(105, 105, 105, 0.6);
+
+    --yqni13-gradient: linear-gradient(167deg, #650D88 42%, #BC0C79 90%);
 }

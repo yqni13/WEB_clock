@@ -2,6 +2,7 @@
 @import "stylesheets/define.css";
 @import "stylesheets/icon.css";
 @import "stylesheets/navbar.css";
+@import "stylesheets/media.css";
 
 
 * {
@@ -14,13 +15,13 @@ body {
     font-family: 'Inconsolata', monospace;      /* needed to activate blink effect */
     background-color: var(--bg-dark);                /* always use dark form of grey for dark mode */  
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
     height: 100vh;                              /* give body full size of current display */
 }
 
 .container {
     display:flex;
+    order: 2;
+    width: 100%;
     align-items: center;
     justify-content: center;
 }
@@ -30,7 +31,6 @@ body {
     vertical-align:center;
     height: 250px;
     width: 250px;
-    margin-left: 200px;
     justify-content: center;
     align-items: center;
     flex-direction: column;

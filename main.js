@@ -1,4 +1,12 @@
 
+function initApplication() {
+    window.onload = function () {
+        setInterval(updateTime, 1000);
+    }
+}
+
+initApplication();
+
 function updateTime() {
     
     let currentDate = new Date();       //get timestamp
@@ -37,8 +45,6 @@ function updateTime() {
         'Samstag'
     ];
 
-    console.log("currentDayName: ", currentDayName);
-
     for (let i = 0; i <= currentDayName; ++i) {
         if (i == currentDayName) {
             currentDayName = weekdays[i];
@@ -50,6 +56,20 @@ function updateTime() {
 
 }
 
-window.onload = function () {
-    setInterval(updateTime, 1000);
+function lockedImgOver(item) {
+    item.className = "icon-Locked";
 }
+
+function lockedImgOut(item, iconName) {
+    item.className = iconName;
+}
+
+function lockedTextOver(item) {
+    item.style.textDecoration = "line-through";
+}
+
+function lockedTextOut(item) {
+    item.style.textDecoration = "none";
+}
+
+
