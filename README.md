@@ -19,9 +19,12 @@ $\texttt{\color{teal}{v1.0.0}}$
 
 <br>
 
-
-
 ## Updates
+
+### $\textsf{last\ update\ 1.0.0\ >>\ {\color{pink}1.?.?}}$
+
+- $\textsf{\color{red}Bugfix:}$ Sunday is displayed correctly in date output. [Before: Only 'undefined' as result shown sundays.]
+
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>

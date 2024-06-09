@@ -7,23 +7,50 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap">
-
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>CLOCK</title>
 </head>
 <body>
+    <nav class="nav-bar">
+        <ul>
+            <li>
+                <a href="/"><i class="icon-BurgerMenu"></i></a>
+            </li>
+            <li>
+                <a href="/"><i class="icon-Clock"></i>Clock</a>
+            </li>
+            <li>
+                <a href="/"><i class="icon-WorldClock"></i>World Clock</a>
+            </li>
+            <li>
+                <a href="/"><i class="icon-Timer"></i>Timer</a>
+            </li>
+            <li>
+                <a href="/"><i class="icon-SpecialTimer"></i>Timer (Pomodoro)</a>
+            </li>
+            <li>
+                <a href="/"><i class="icon-SpecialTimer"></i>Timer (60-60-30)</a>
+            </li>
+            <li>
+                <a href="/"><i class="icon-Settings"></i>Settings</a>
+            </li>
+        </ul>
+    </nav>
     <div class="container">
-        <div id="clock_time">
-            <span id="hour">00</span>
-            <span class="blink-colon">:</span>
-            <span id="minute">00</span>
-            <span class="blink-colon">:</span>
-            <span id="second">00</span>
-            
-        </div>
-        <div id="clock_date">
-            <!-- placeholder date -->
-            <p id="clock_date_p">0</p>
+        <div class="wrapper_clock">
+            <div id="clock_time">
+                <span id="hour">00</span>
+                <span class="blink-colon">:</span>
+                <span id="minute">00</span>
+                <span class="blink-colon">:</span>
+                <span id="second">00</span>
+                
+            </div>
+            <div id="clock_date">
+                <!-- placeholder date -->
+                <p id="clock_date_p">0</p>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>

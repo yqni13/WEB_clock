@@ -28,18 +28,20 @@ function updateTime() {
     
 
     let weekdays = [
+        'Sonntag',
         'Montag',
         'Dienstag',
         'Mittwoch',
         'Donnerstag',
         'Freitag',
-        'Samstag',
-        'Sonntag'
+        'Samstag'
     ];
+
+    console.log("currentDayName: ", currentDayName);
 
     for (let i = 0; i <= currentDayName; ++i) {
         if (i == currentDayName) {
-            currentDayName = weekdays[i-1];
+            currentDayName = weekdays[i];
         }
     }
 
