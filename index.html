@@ -15,38 +15,39 @@
             <li class="enabled-item">
                 <a href=""><i class="icon-GitHub"></i>yqni13 WEB_clock</a>
             </li>
-            <li class="disabled-item">
+            <li class="enabled-item">
                 <a href="#"><i class="icon-Clock"></i>Clock</a>
             </li>
             <li class="disabled-item">
                 <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
-                    <i class="icon-WorldClock" onmouseover="lockedImgOver(this)" onmouseout="lockedImgOut(this, 'icon-WorldClock')"></i>
+                    <i class="icon-WorldClock" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-WorldClock')"></i>
                     World Clock
                 </a>
             </li>
-            <li class="disabled-item" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
-                <a href="#">
+            <li class="disabled-item">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
                     <i class="icon-Timer" onmouseover="lockedImgOver(this)" 
                     onmouseout="lockedImgOut(this, 'icon-Timer')"></i>
                     Timer
                 </a>
             </li>
-            <li class="disabled-item" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
-                <a href="#">
+            <li class="disabled-item">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
                     <i class="icon-SpecialTimer2" onmouseover="lockedImgOver(this)" 
                     onmouseout="lockedImgOut(this, 'icon-SpecialTimer2')"></i>
                     Timer (Pomodoro)
                 </a>
             </li>
-            <li class="disabled-item" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
-                <a href="#">
+            <li class="disabled-item">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
                     <i class="icon-SpecialTimer1" onmouseover="lockedImgOver(this)" 
                     onmouseout="lockedImgOut(this, 'icon-SpecialTimer1')"></i>
                     Timer (60-60-30)
                 </a>
             </li>
-            <li class="disabled-item" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
-                <a href="#">
+            <li class="disabled-item">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
                     <i class="icon-Settings" onmouseover="lockedImgOver(this)" 
                     onmouseout="lockedImgOut(this, 'icon-Settings')"></i>
                     Settings
@@ -54,7 +55,7 @@
             </li>
         </ul>
     </nav>
-    <div class="container">
+    <div class="container" id="wrapper">
         <div class="wrapper_clock">
             <div id="clock_time">
                 <span id="hour">00</span>
@@ -71,6 +72,7 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="js/settings-module.js" type="module"></script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>

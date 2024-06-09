@@ -1,13 +1,17 @@
+import * as settings from './js/settings-module.js';
 
-function initApplication() {
+window.initApplication = function() {
     window.onload = function () {
         setInterval(updateTime, 1000);
     }
+
+    settings.selectTheme('dark');
+    console.log("theme: ", settings.selectedTheme);
 }
 
 initApplication();
 
-function updateTime() {
+window.updateTime = function() {
     
     let currentDate = new Date();       //get timestamp
     
@@ -56,20 +60,22 @@ function updateTime() {
 
 }
 
-function lockedImgOver(item) {
+window.lockedImgOver = function(item) {
     item.className = "icon-Locked";
 }
 
-function lockedImgOut(item, iconName) {
+window.lockedImgOut = function(item, iconName) {
     item.className = iconName;
 }
 
-function lockedTextOver(item) {
+window.lockedTextOver = function(item) {
     item.style.textDecoration = "line-through";
 }
 
-function lockedTextOut(item) {
+window.lockedTextOut = function(item) {
     item.style.textDecoration = "none";
 }
 
-
+window.navSettings = function() {
+    settings.openSettings();
+}

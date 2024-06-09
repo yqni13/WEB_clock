@@ -1,9 +1,11 @@
 :root {                /* always use dark form of grey for dark mode */  
     --bg-dark: #1c1c1c;
-    --bg-light: white; 
 
     --shadow-blue: rgb(0,0,234);
+    --alice-blue: #F0F8FF;
     --disabled-grey: rgba(105, 105, 105, 0.6);
+    --forbidden-red: rgba(82, 25, 30, 0.779);
+    --forbidden-blue: rgba(11, 55, 98, 0.8);
 
     --yqni13-gradient: linear-gradient(167deg, #650D88 42%, #BC0C79 90%);
 }

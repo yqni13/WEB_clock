@@ -44,7 +44,7 @@ body {
 
 #clock_time {
     font-size: 2em;
-    color: red;
+    color: var(--alice-blue);
     /* color: #0044CC; */
 }
 
