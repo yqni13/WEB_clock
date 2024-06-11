@@ -1,18 +1,31 @@
 import * as settings from './js/settings-module.js';
 
-window.initApplication = function() {
-    window.onload = function () {
-        setInterval(updateTime, 1000);
-    }
+var intervalID;
 
-    settings.selectTheme('dark');
-    console.log("theme: ", settings.selectedTheme);
+function initApplication() {
+    document.getElementById('nav-item-clock').addEventListener("click", changeToClock, false);
+
+    buildClockPage();
+    refreshUpdateTime();
 }
 
 initApplication();
 
-window.updateTime = function() {
-    
+function refreshUpdateTime() {
+    window.addEventListener("load", () => {
+        intervalID = setInterval(updateTime, 1000);
+    })
+}
+
+function changeToClock() {
+    intervalID = '';
+    buildClockPage();
+    refreshUpdateTime();
+    console.log("intervalID for changeToClock(): ", intervalID);
+}
+
+
+function updateTime() {
     let currentDate = new Date();       //get timestamp
     
     let hour = document.getElementById("hour");
@@ -60,6 +73,42 @@ window.updateTime = function() {
 
 }
 
+function buildClockPage() {
+    const container = document.getElementById('wrapper');
+    container.innerHTML = '';
+
+    // create
+    var clockWrapper = document.createElement('div');
+    var clockTime = document.createElement('div');
+    var clockDate = document.createElement('div');
+    var hours = document.createElement('span');
+    var minutes = document.createElement('span');
+    var seconds = document.createElement('span');
+    var blink = document.createElement('span');
+    var dateContent = document.createElement('p');
+    
+    // assign
+    clockWrapper.className = 'wrapper_clock';
+    clockTime.id = 'clock_time';
+    hours.id = 'hour'
+    hours.innerHTML = '00';
+    minutes.id = 'minute';
+    minutes.innerHTML = '00';
+    seconds.id = 'second';
+    seconds.innerHTML = '00';
+    blink.className = 'blink-colon';
+    blink.innerHTML = ':';
+    clockDate.id = 'clock_date';
+    dateContent.id = 'clock_date_p';
+    dateContent.innerHTML = '0';
+
+    // assemble
+    clockDate.append(dateContent);
+    clockTime.append(hours, blink, minutes, blink.cloneNode(1), seconds);
+    clockWrapper.append(clockTime, clockDate);
+    container.append(clockWrapper);
+}
+
 window.lockedImgOver = function(item) {
     item.className = "icon-Locked";
 }
@@ -78,4 +127,6 @@ window.lockedTextOut = function(item) {
 
 window.navSettings = function() {
     settings.openSettings();
+    console.log("intervalID: ", intervalID);
+    clearInterval(intervalID);
 }

@@ -15,7 +15,7 @@
             <li class="enabled-item">
                 <a href=""><i class="icon-GitHub"></i>yqni13 WEB_clock</a>
             </li>
-            <li class="enabled-item">
+            <li class="enabled-item" id="nav-item-clock"> <!-- TODO: onclick="two functions?"-->
                 <a href="#"><i class="icon-Clock"></i>Clock</a>
             </li>
             <li class="disabled-item">
@@ -46,33 +46,20 @@
                     Timer (60-60-30)
                 </a>
             </li>
-            <li class="disabled-item">
-                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
-                    <i class="icon-Settings" onmouseover="lockedImgOver(this)" 
-                    onmouseout="lockedImgOut(this, 'icon-Settings')"></i>
+            <li class="enabled-item" id="nav-item-settings" onclick="navSettings()">
+                <a href="#">
+                    <i class="icon-Settings"></i>
                     Settings
                 </a>
             </li>
         </ul>
     </nav>
+
     <div class="container" id="wrapper">
-        <div class="wrapper_clock">
-            <div id="clock_time">
-                <span id="hour">00</span>
-                <span class="blink-colon">:</span>
-                <span id="minute">00</span>
-                <span class="blink-colon">:</span>
-                <span id="second">00</span>
-                
-            </div>
-            <div id="clock_date">
-                <!-- placeholder date -->
-                <p id="clock_date_p">0</p>
-            </div>
-        </div>
+        <!-- dynamic build -->
     </div>
 
-    <script src="js/settings-module.js" type="module"></script>
-    <script src="main.js" type="module"></script>
+    <!-- <script src="js/settings-module.js" type="module"></script> -->
+    <script src="main.js" type="module" defer></script>
 </body>
 </html>

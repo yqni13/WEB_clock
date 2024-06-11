@@ -6,6 +6,12 @@ export function selectTheme(option) {
 }
 
 export function openSettings() {
+    buildSettingsPage();
+}
+
+function buildSettingsPage() {
     const container = document.getElementById('wrapper');
     container.innerHTML = '';
+    
+    
 }
