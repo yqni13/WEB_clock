@@ -1,28 +1,27 @@
 import * as settings from './js/settings-module.js';
 
-var intervalID;
 
 function initApplication() {
-    document.getElementById('nav-item-clock').addEventListener("click", changeToClock, false);
-
-    buildClockPage();
-    refreshUpdateTime();
+    
+    clockPage.start();
+    document.getElementById('nav-item-clock').addEventListener("click", clockPage.start, false);
 }
 
-initApplication();
+function navClockPage() {
+    var interval;
 
-function refreshUpdateTime() {
-    window.addEventListener("load", () => {
-        intervalID = setInterval(updateTime, 1000);
-    })
+    return {
+        start() {
+            buildClockPage();
+            interval = setInterval(updateTime, 1000);
+        },
+        stop() {
+            clearInterval(interval);
+        }
+    }
 }
 
-function changeToClock() {
-    intervalID = '';
-    buildClockPage();
-    refreshUpdateTime();
-    console.log("intervalID for changeToClock(): ", intervalID);
-}
+var clockPage = navClockPage()
 
 
 function updateTime() {
@@ -74,8 +73,10 @@ function updateTime() {
 }
 
 function buildClockPage() {
+    document.getElementById('wrapper-settings').style.display = 'none';
     const container = document.getElementById('wrapper');
     container.innerHTML = '';
+    container.style.display = 'flex';
 
     // create
     var clockWrapper = document.createElement('div');
@@ -127,6 +128,8 @@ window.lockedTextOut = function(item) {
 
 window.navSettings = function() {
     settings.openSettings();
-    console.log("intervalID: ", intervalID);
-    clearInterval(intervalID);
+    clockPage.stop();
 }
+
+
+initApplication();

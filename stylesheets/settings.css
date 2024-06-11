@@ -1,0 +1,45 @@
+
+#wrapper-settings {
+    display: none;
+
+
+}
+
+.settings-preview {
+    width: 30%;
+    height: 100%;
+    align-content: center;
+    border-right: solid 1px var(--disabled-grey);
+    #settings-preview-img {
+        background-image: url("../assets/img/preview_clock1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        aspect-ratio: 1 / 1;
+        margin: 0 25px;
+    }
+}
+
+.settings-content {
+    width: 70%;
+    justify-content: center;
+}
+
+.setting-options {
+    width: 100%;
+    padding: 0 15%;
+    display: flex;
+    margin: 25px 0;
+    label { 
+        color: var(--alice-blue);
+        font-size: 1.3rem;
+        align-content: center;
+        flex: 1; 
+    }
+    select {
+        width: 35%;
+        padding: 10px 20px;
+        color: var(--alice-blue);
+        background-color: var(--bg-dark);
+        border-color: var(--alice-blue);
+    }
+}

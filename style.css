@@ -3,6 +3,7 @@
 @import "stylesheets/icon.css";
 @import "stylesheets/navbar.css";
 @import "stylesheets/media.css";
+@import "stylesheets/settings.css";
 
 
 * {
@@ -63,4 +64,3 @@ body {
 #clock_date {
     color: grey;
 }
-
