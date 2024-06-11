@@ -43,7 +43,7 @@ function updateTime() {
     minute.innerHTML = minuteValue;
     second.innerHTML = secondValue;
 
-    let currentDayName = currentDate.getDay();
+    // let currentDayName = currentDate.getDay();
     let currentDay = currentDate.getDate();
     if (currentDay >= 0 && currentDay <= 9) { currentDay = "0" + currentDay; };
     let currentMonth = currentDate.getMonth()+1;
@@ -61,14 +61,29 @@ function updateTime() {
         'Samstag'
     ];
 
-    for (let i = 0; i <= currentDayName; ++i) {
-        if (i == currentDayName) {
-            currentDayName = weekdays[i];
-        }
-    }
+    // for (let i = 0; i <= currentDayName; ++i) {
+    //     if (i == currentDayName) {
+    //         currentDayName = weekdays[i];
+    //     }
+    // }
 
     let divDate = document.getElementById("clock_date");
-    divDate.innerHTML = currentDayName + ", " + currentDay + "." + currentMonth + "." + currentYear;
+    switch(settings.settingDateFormat) {
+        case 'mm/dd/yyyy':
+            divDate.innerHTML = `${currentMonth}/${currentDay}/${currentYear}`;
+            break;
+        case 'dd.mm.yyyy':
+            divDate.innerHTML = `${currentDay}.${currentMonth}.${currentYear}`;
+            break;
+        case 'yyyy-mm-dd':
+            divDate.innerHTML = `${currentYear}-${currentMonth}-${currentDay}`;
+            break;
+        case 'dd-mm-yyyy':
+            divDate.innerHTML = `${currentDay}-${currentMonth}-${currentYear}`;
+            break;
+        default:
+            divDate.innerHTML = `${currentMonth}/${currentDay}/${currentYear}`;
+    }
 
 }
 
