@@ -9,3 +9,11 @@
 
     --yqni13-gradient: linear-gradient(167deg, #650D88 42%, #BC0C79 90%);
 }
+
+[data-theme='lightmode'] {
+    --body-bg: var(--alice-blue);
+}
+
+[data-theme='darkmode'] {
+    --body-bg: var(--bg-dark);
+}

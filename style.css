@@ -14,9 +14,9 @@
 
 body {
     font-family: 'Inconsolata', monospace;      /* needed to activate blink effect */
-    background-color: var(--bg-dark);                /* always use dark form of grey for dark mode */  
+    background-color: var(--body-bg);
     display: flex;
-    height: 100vh;                              /* give body full size of current display */
+    height: 100vh;
 }
 
 .container {

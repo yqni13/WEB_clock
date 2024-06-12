@@ -2,7 +2,7 @@ import * as settings from './js/settings-module.js';
 
 
 function initApplication() {
-    
+    document.body.setAttribute('data-theme', settings.settingTheme);
     clockPage.start();
     document.getElementById('nav-item-clock').addEventListener("click", clockPage.start, false);
 }
