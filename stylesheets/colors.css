@@ -3,6 +3,7 @@
 
     --shadow-blue: rgb(0,0,234);
     --alice-blue: #F0F8FF;
+    --deepnavy-blue: #011222;
     --disabled-grey: rgba(105, 105, 105, 0.6);
     --forbidden-red: rgba(82, 25, 30, 0.779);
     --forbidden-blue: rgba(11, 55, 98, 0.8);
@@ -12,8 +13,12 @@
 
 [data-theme='lightmode'] {
     --body-bg: var(--alice-blue);
+    --text-color: var(--deepnavy-blue);
+    --border-color: var(--deepnavy-blue);
 }
 
 [data-theme='darkmode'] {
     --body-bg: var(--bg-dark);
+    --text-color: var(--alice-blue);
+    --border-color: var(--disabled-grey);
 }

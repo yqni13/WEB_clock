@@ -2,7 +2,7 @@
     display: flex;
     order: 1;
     padding:0 25px;
-    border-right: solid 1px var(--disabled-grey);
+    border-right: solid 1px var(--border-color);
     border-top: none;
     ul {
         padding: 10px 0;
@@ -15,7 +15,7 @@
             a {
                 text-decoration: none;
                 font-size: 1.7rem;
-                color: var(--alice-blue);
+                color: var(--text-color);
                 /* &:hover { color: var(--disabled-grey); } */
             }
             i {
@@ -36,7 +36,7 @@
         li:first-child {
             padding-bottom: 15px;
             margin-bottom: 25px;
-            border-bottom: solid 1px var(--disabled-grey);
+            border-bottom: solid 1px var(--border-color);
             a {
                 background: var(--yqni13-gradient);
                 -webkit-background-clip: text;

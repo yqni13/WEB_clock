@@ -27,7 +27,7 @@
         height: 5rem;
         justify-content: center;
         border-right: none!important;
-        border-top: solid 1px var(--disabled-grey) !important;
+        border-top: solid 1px var(--border-color) !important;
         ul {
             height: auto;
             flex-direction: row;

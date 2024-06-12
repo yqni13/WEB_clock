@@ -9,7 +9,7 @@
     width: 30%;
     height: 100%;
     align-content: center;
-    border-right: solid 1px var(--disabled-grey);
+    border-right: solid 1px var(--border-color);
     #settings-preview-img {
         background-image: url("../assets/img/preview_clock1.png");
         background-size: cover;
@@ -30,7 +30,7 @@
     display: flex;
     margin: 25px 0;
     label { 
-        color: var(--alice-blue);
+        color: var(--text-color);
         font-size: 1.3rem;
         align-content: center;
         flex: 1; 
@@ -38,8 +38,8 @@
     select {
         width: 35%;
         padding: 10px 20px;
-        color: var(--alice-blue);
-        background-color: var(--bg-dark);
-        border-color: var(--alice-blue);
+        color: var(--text-color);
+        background-color: var(--body-bg);
+        border-color: var(--border-color);
     }
 }

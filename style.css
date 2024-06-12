@@ -45,7 +45,7 @@ body {
 
 #clock_time {
     font-size: 2em;
-    color: var(--alice-blue);
+    color: var(--text-color);
     /* color: #0044CC; */
 }
 
@@ -62,5 +62,5 @@ body {
 }
 
 #clock_date {
-    color: grey;
+    color: var(--border-color);
 }
