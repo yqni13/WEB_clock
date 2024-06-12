@@ -14,15 +14,12 @@
             margin: 15px 0;
             a {
                 text-decoration: none;
-                font-size: 1.7rem;
-                color: var(--text-color);
-                /* &:hover { color: var(--disabled-grey); } */
+                font-size: 1.7rem;                
             }
             i {
                 margin-right: 10px;
                 width: 1.7rem;
                 height: 1.7rem;
-                /* &:hover { color: var(--disabled-grey); } */
             }
         }
         li > * {
@@ -44,11 +41,18 @@
             }
         }
 
-        /* NOT ACTIVE YET */
+        /* NOT IMPLEMENTED YET */
         .disabled-item a {
             color: var(--forbidden-blue);
             cursor: default;
         }
+    }
+
+    .nav-active a{
+        color: var(--text-color);
+    }
+    .nav-passive a{
+        color: var(--disabled-grey);
     }
 }
 

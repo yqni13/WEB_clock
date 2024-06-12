@@ -11,7 +11,7 @@
     align-content: center;
     border-right: solid 1px var(--border-color);
     #settings-preview-img {
-        background-image: url("../assets/img/preview_clock1.png");
+        background-image: url("../assets/img/not_available.png");
         background-size: cover;
         background-repeat: no-repeat;
         aspect-ratio: 1 / 1;
@@ -42,4 +42,69 @@
         background-color: var(--body-bg);
         border-color: var(--border-color);
     }
+    input {
+        background-color: var(--body-bg);
+        border-color: var(--disabled-grey);
+    }
+
+    .small-selectors {
+        width: 75px;
+    }
+
+    /* toggle switch */
+    .custom-switch {
+        position: relative;
+        display: inline-block;
+        height: 25px;
+        /* height: 34px; */
+        flex: none!important;
+        
+        input {
+            opacity: 0;
+            height: 0;
+        }
+        input:checked + .custom-slider {
+            background-color: var(--forbidden-blue);
+        }
+        input:focus + .custom-slider {
+            box-shadow: 0 0 1px white;
+        }
+        input:checked + .custom-slider:before {
+            -webkit-transform: translateX(46px);
+            -ms-transform: translateX(46px);
+            transform: translateX(46px);
+        }
+
+        .custom-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--disabled-grey);
+            -webkit-transition: .4s;
+            transition: .4s;
+
+            &:before {
+                position: absolute;
+                content: '';
+                height: 17px;
+                width: 17px;
+                left: 6px;
+                bottom: 4px;
+                background-color: var(--alice-blue);
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+        }
+
+        .custom-slider.round {
+            border-radius: 34px;
+        }
+        .custom-slider.round:before {
+            border-radius: 50%;
+        }
+    }
+
 }

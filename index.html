@@ -18,28 +18,28 @@
             <li class="enabled-item" id="nav-item-clock"> <!-- TODO: onclick="two functions?"-->
                 <a href="#"><i class="icon-Clock"></i>Clock</a>
             </li>
-            <li class="disabled-item">
+            <li class="disabled-item" id="nav-item-worldclock">
                 <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
                     <i class="icon-WorldClock" onmouseover="lockedImgOver(this)" 
                     onmouseout="lockedImgOut(this, 'icon-WorldClock')"></i>
                     World Clock
                 </a>
             </li>
-            <li class="disabled-item">
+            <li class="disabled-item" id="nav-item-timer">
                 <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
                     <i class="icon-Timer" onmouseover="lockedImgOver(this)" 
                     onmouseout="lockedImgOut(this, 'icon-Timer')"></i>
                     Timer
                 </a>
             </li>
-            <li class="disabled-item">
+            <li class="disabled-item" id="nav-item-specialtimer2">
                 <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
                     <i class="icon-SpecialTimer2" onmouseover="lockedImgOver(this)" 
                     onmouseout="lockedImgOut(this, 'icon-SpecialTimer2')"></i>
                     Timer (Pomodoro)
                 </a>
             </li>
-            <li class="disabled-item">
+            <li class="disabled-item" id="nav-item-specialtimer1">
                 <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
                     <i class="icon-SpecialTimer1" onmouseover="lockedImgOver(this)" 
                     onmouseout="lockedImgOut(this, 'icon-SpecialTimer1')"></i>
@@ -60,7 +60,7 @@
     </div>
 
     <div class="container" id="wrapper-settings">
-        <div class="settings-preview">
+        <div class="settings-preview" id="settings-preview-wrapper">
             <div id="settings-preview-img"></div>
         </div>
         <div class="settings-content">
@@ -80,11 +80,30 @@
                     <option value="format4">dd-mm-yyyy</option>
                 </select>
             </div>
+            <div class="setting-options" id="clock-design-option">
+                <label for="clockdesign">select clock design: </label>
+                <select name="clockdesign" id="clockdesign">
+                    <option value="design1">Digital #1</option>
+                    <option value="design2">Analog #1</option>
+                    <option value="design3">Digital #2</option>
+                    <option value="design4">Analog #2</option>
+                </select>
+            </div>
+            <div class="setting-options" id="clock-design-option">
+                <label for="clockcolor">select clock color: </label>
+                <input type="color" class="small-selectors" id="colorpicker">
+            </div>
+            <div class="setting-options" id="clock-design-option">
+                <label for="clockpreview">set preview off/on: </label>
+                <label class="custom-switch">
+                    <input type="checkbox" class="small-selectors" id="clockpreview">
+                    <span class="custom-slider round"></span>
+                </label>
+            </div>
         </div>
 
     </div>
 
-    <!-- <script src="js/settings-module.js" type="module"></script> -->
     <script src="main.js" type="module" defer></script>
 </body>
 </html>

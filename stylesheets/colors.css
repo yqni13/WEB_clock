@@ -5,8 +5,10 @@
     --alice-blue: #F0F8FF;
     --deepnavy-blue: #011222;
     --disabled-grey: rgba(105, 105, 105, 0.6);
-    --forbidden-red: rgba(82, 25, 30, 0.779);
+    --forbidden-red: #52191EC7;
     --forbidden-blue: rgba(11, 55, 98, 0.8);
+
+    --select-clockcolor: #0f9154;
 
     --yqni13-gradient: linear-gradient(167deg, #650D88 42%, #BC0C79 90%);
 }

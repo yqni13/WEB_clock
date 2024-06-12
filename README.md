@@ -1,9 +1,10 @@
 # yqni13 WEB_clock
-$\texttt{\color{teal}{v1.1.1}}$
+$\texttt{\color{teal}{v1.2.1}}$
 
 ## Screenshot clock
 <div align="center">
-    <img alt="picture unable to display" src="assets/img/screenshot.png">
+    <img alt="picture unable to display" src="assets/img/screenshot_clock.png">
+    <img alt="picture unable to display" src="assets/img/screenshot_settings.png">
 </div>
 
 ### Technology 
@@ -19,10 +20,23 @@ $\texttt{\color{teal}{v1.1.1}}$
 
 <br>
 
+## Features
+
+<dl>
+    <dd>:page_facing_up: Single Page Application</dd>
+    <dd>:1234: Components as Javascript ES6 modules</dd>
+    <dd>:wrench: Live changing settings via local storage</dd>
+    <dd>:new_moon_with_face:/:sun_with_face: Dark/Light mode</dd>
+    <dd>:art: Customizable design</dd>
+</dl>
+
+<br>
+
 ## Updates
 
-### $\textsf{last\ update\ 1.0.0\ >>\ {\color{pink}1.1.1}}$
+### $\textsf{last\ update\ 1.0.0\ >>\ {\color{pink}1.2.1}}$
 
+- $\textsf{\color{orange}Change:}$ Settings with live change added. This includes themes (background, text color, ...), border color of digital clock version and different date format.
 - $\textsf{\color{orange}Change:}$ Responsive navbar added.
 - $\textsf{\color{red}Bugfix:}$ Sunday is displayed correctly in date output. [Before: Only 'undefined' as result shown sundays.]
 
@@ -30,10 +44,7 @@ $\texttt{\color{teal}{v1.1.1}}$
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
-    <dd>- enable option to change color theme of clock</dd>
-    <dd>- enable option to change color background theme</dd>
     <dd>- option to select ger/eng</dd>
-    <dd>- option to select different date formats</dd>
     <dd>- option to select different time formats</dd>
 </dl>
 

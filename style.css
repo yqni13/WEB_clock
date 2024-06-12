@@ -4,6 +4,7 @@
 @import "stylesheets/navbar.css";
 @import "stylesheets/media.css";
 @import "stylesheets/settings.css";
+@import "stylesheets/clock-design.css";
 
 
 * {
@@ -27,40 +28,3 @@ body {
     justify-content: center;
 }
 
-.wrapper_clock {
-    display: flex;
-    vertical-align:center;
-    height: 250px;
-    width: 250px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 2px solid blue;
-    border-radius: 50%;
-    box-shadow:                                 /* shadow built by 3 different widths */
-        0 0 5px var(--shadow-blue),
-        0 0 10px var(--shadow-blue),
-        0 0 15px var(--shadow-blue);
-}
-
-#clock_time {
-    font-size: 2em;
-    color: var(--text-color);
-    /* color: #0044CC; */
-}
-
-.blink-colon {
-    animation: blink 1s infinite linear;
-}
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    30% {
-        opacity: 0.25;
-    }
-}
-
-#clock_date {
-    color: var(--border-color);
-}
