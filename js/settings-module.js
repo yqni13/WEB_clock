@@ -1,20 +1,26 @@
 export var settingTheme = localStorage.getItem('setting-theme') || 'darkmode';
 export var settingDateFormat = localStorage.getItem('setting-dateformat') || 'dd.mm.yyyy';
 export var settingClockDesign = localStorage.getItem('setting-clockdesign') || 'design1';
-export var settingClockColor = localStorage.getItem('setting-clockcolor') || '#910f4e';
+export var settingClockColor1 = localStorage.getItem('setting-clockcolor1') || '#910f4e';
+export var settingClockColor2 = localStorage.getItem('setting-clockcolor2') || '#910f4e';
+export var settingClockColor3 = localStorage.getItem('setting-clockcolor3') || '#910f4e';
 export var settingClockPreview = localStorage.getItem('setting-clockpreview') || true;
 
 const parameterThemes = 'themes';
 const parameterDateFormat = 'dateformat';
 const parameterClockDesign = 'clockdesign';
-const parameterClockColor = 'clockcolor';
+const parameterClockColor1 = 'clockcolor1';
+const parameterClockColor2 = 'clockcolor2';
+const parameterClockColor3 = 'clockcolor3';
 const parameterClockPreview = 'clockpreview';
 
 export function openSettings() {
     settingTheme = localStorage.getItem('setting-theme') || 'Dark Mode';
     settingDateFormat = localStorage.getItem('setting-dateformat') || 'dd.mm.yyyy';
     settingClockDesign = localStorage.getItem('setting-clockdesign') || 'design1';
-    settingClockColor = localStorage.getItem('setting-clockcolor') || '#910f4e';
+    settingClockColor1 = localStorage.getItem('setting-clockcolor1') || '#910f4e';
+    settingClockColor2 = localStorage.getItem('setting-clockcolor2') || '#910f4e';
+    settingClockColor3 = localStorage.getItem('setting-clockcolor3') || '#910f4e';
     settingClockPreview = localStorage.getItem('setting-clockpreview') || true;
 
     buildSettingsPage();
@@ -27,8 +33,12 @@ function buildSettingsPage() {
     document.getElementById('dateformat').parameter = parameterDateFormat;
     document.getElementById('clockdesign').addEventListener('change', setNewSettings, false);
     document.getElementById('clockdesign').parameter = parameterClockDesign;
-    document.getElementById('colorpicker').addEventListener('change', setNewSettings, false);
-    document.getElementById('colorpicker').parameter = parameterClockColor;
+    document.getElementById('colorpicker1').addEventListener('change', setNewSettings, false);
+    document.getElementById('colorpicker1').parameter = parameterClockColor1;
+    document.getElementById('colorpicker2').addEventListener('change', setNewSettings, false);
+    document.getElementById('colorpicker2').parameter = parameterClockColor2;
+    document.getElementById('colorpicker3').addEventListener('change', setNewSettings, false);
+    document.getElementById('colorpicker3').parameter = parameterClockColor3;
     document.getElementById('clockpreview').addEventListener('change', setNewSettings, false);
     document.getElementById('clockpreview').parameter = parameterClockPreview;
     document.getElementById('wrapper-settings').style.display = "flex";
@@ -36,7 +46,9 @@ function buildSettingsPage() {
     setThemeSetting();
     setDateFormatSetting();
     setClockDesignSetting();
-    setClockColorSetting();
+    setClockColor1Setting();
+    setClockColor2Setting();
+    setClockColor3Setting();
     setClockPreviewSetting();
     displayClockPreview();
 }
@@ -63,10 +75,22 @@ export function setNewSettings(param) {
             localStorage.setItem('setting-clockdesign', settingClockDesign);
             break;
         }
-        case 'clockcolor': {
-            settingClockColor = document.getElementById('colorpicker').value;
-            localStorage.setItem('setting-clockcolor', settingClockColor);
-            document.documentElement.style.setProperty('--select-clockcolor', settingClockColor);
+        case 'clockcolor1': {
+            settingClockColor1 = document.getElementById('colorpicker1').value;
+            localStorage.setItem('setting-clockcolor1', settingClockColor1);
+            document.documentElement.style.setProperty('--selected-color1', settingClockColor1);
+            break;
+        }
+        case 'clockcolor2': {
+            settingClockColor2 = document.getElementById('colorpicker2').value;
+            localStorage.setItem('setting-clockcolor2', settingClockColor2);
+            document.documentElement.style.setProperty('--selected-color2', settingClockColor2);
+            break;
+        }
+        case 'clockcolor3': {
+            settingClockColor3 = document.getElementById('colorpicker3').value;
+            localStorage.setItem('setting-clockcolor3', settingClockColor3);
+            document.documentElement.style.setProperty('--selected-color3', settingClockColor3);
             break;
         }
         case 'clockpreview': {
@@ -134,9 +158,17 @@ function setClockDesignSetting() {
     }
 }
 
-function setClockColorSetting() {
-    var setting = document.getElementById('colorpicker');
-    setting.value = settingClockColor;
+function setClockColor1Setting() {
+    var setting = document.getElementById('colorpicker1');
+    setting.value = settingClockColor1;
+}
+function setClockColor2Setting() {
+    var setting = document.getElementById('colorpicker2');
+    setting.value = settingClockColor2;
+}
+function setClockColor3Setting() {
+    var setting = document.getElementById('colorpicker3');
+    setting.value = settingClockColor3;
 }
 
 function setClockPreviewSetting() {
@@ -157,8 +189,12 @@ export function setDefaultItems() {
     if(!localStorage.getItem('setting-theme')) localStorage.setItem('setting-theme', 'darkmode');
     if(!localStorage.getItem('setting-dateformat')) localStorage.setItem('setting-dateformat', 'dd.mm.yyyy');
     if(!localStorage.getItem('setting-clockdesign')) localStorage.setItem('setting-clockdesign', 'design1');
-    if(!localStorage.getItem('setting-clockcolor')) localStorage.setItem('setting-clockcolor', '#910f4e');
-    document.documentElement.style.setProperty('--select-clockcolor', settingClockColor);
+    if(!localStorage.getItem('setting-clockcolor1')) localStorage.setItem('setting-clockcolor1', '#910f4e');
+    document.documentElement.style.setProperty('--selected-color1', settingClockColor1);
+    if(!localStorage.getItem('setting-clockcolor2')) localStorage.setItem('setting-clockcolor2', '#910f4e');
+    document.documentElement.style.setProperty('--selected-color2', settingClockColor2);
+    if(!localStorage.getItem('setting-clockcolor3')) localStorage.setItem('setting-clockcolor3', '#910f4e');
+    document.documentElement.style.setProperty('--selected-color3', settingClockColor3);
     if(!localStorage.getItem('setting-clockpreview')) localStorage.setItem('setting-clockpreview', false);
 }
 

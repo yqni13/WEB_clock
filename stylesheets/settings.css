@@ -106,5 +106,15 @@
             border-radius: 50%;
         }
     }
+}
 
+/* disabled color picker */
+.disabled-setting-option {
+    label {
+        color: var(--disabled-grey)!important;
+        text-decoration: line-through!important;
+    }
+    input {
+        opacity: 0.25!important;
+    }
 }

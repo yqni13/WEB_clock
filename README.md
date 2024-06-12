@@ -1,5 +1,5 @@
 # yqni13 WEB_clock
-$\texttt{\color{teal}{v1.2.1}}$
+$\texttt{\color{teal}{v1.3.0}}$
 
 ## Screenshot clock
 <div align="center">
@@ -34,17 +34,19 @@ $\texttt{\color{teal}{v1.2.1}}$
 
 ## Updates
 
-### $\textsf{last\ update\ 1.0.0\ >>\ {\color{pink}1.2.1}}$
+### $\textsf{last\ update\ 1.2.1\ >>\ {\color{pink}1.3.0}}$
 
-- $\textsf{\color{orange}Change:}$ Settings with live change added. This includes themes (background, text color, ...), border color of digital clock version and different date format.
-- $\textsf{\color{orange}Change:}$ Responsive navbar added.
-- $\textsf{\color{red}Bugfix:}$ Sunday is displayed correctly in date output. [Before: Only 'undefined' as result shown sundays.]
+- $\textsf{\color{orange}Change:}$ First analog design ('Analog #1') for clock component added.
+- $\textsf{\color{orange}Change:}$ Two more color pickers added to settings (only effective for analog design at the moment).
+
 
 <br>
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
     <dd>- option to select ger/eng</dd>
+    <dd>- add responsive design to clock component</dd>
+    <dd>- add real-live working mini figures of clock design as preview in settings</dd>
     <dd>- option to select different time formats</dd>
 </dl>
 
