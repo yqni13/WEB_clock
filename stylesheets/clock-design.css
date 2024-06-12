@@ -1,0 +1,66 @@
+/* clock design #1 */
+.wrapper_clock_design1 {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid var(--select-clockcolor);
+    border-radius: 50%;
+    box-shadow:                                 /* shadow built by 3 different widths */
+        0 0 5px var(--select-clockcolor),
+        0 0 10px var(--select-clockcolor),
+        0 0 15px var(--select-clockcolor);
+
+    #clock_time_design1 {
+        font-size: 2em;
+        color: var(--text-color);
+    }    
+
+    #clock_date_design1 {
+        color: var(--border-color);
+    }
+}
+
+
+
+
+
+/* clock design #3 */
+.wrapper_clock_design3 {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    width: 25vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid var(--select-clockcolor);
+    border-radius: 5%;
+    box-shadow:                                 /* shadow built by 3 different widths */
+        0 0 5px var(--select-clockcolor),
+        0 0 10px var(--select-clockcolor),
+        0 0 15px var(--select-clockcolor);
+
+    #clock_time_design3 {
+        font-size: 2em;
+        color: var(--text-color);
+    }    
+
+    #clock_date_design3 {
+        color: var(--border-color);
+    }
+}
+
+.blink-colon {
+    animation: blink 1s infinite linear;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0.25;
+    }
+}

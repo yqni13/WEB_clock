@@ -3,29 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/icon type" href="assets/img/favicon/favicon_clock.ico" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap">
-
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/icon type" href="assets/favicon/favicon_clock.ico" />
     <title>CLOCK</title>
 </head>
 <body>
-    <div class="container">
-        <div id="clock_time">
-            <span id="hour">00</span>
-            <span class="blink-colon">:</span>
-            <span id="minute">00</span>
-            <span class="blink-colon">:</span>
-            <span id="second">00</span>
-            
-        </div>
-        <div id="clock_date">
-            <!-- placeholder date -->
-            <p id="clock_date_p">0</p>
-        </div>
+    <nav class="nav-bar">
+        <ul>
+            <li class="enabled-item">
+                <a href=""><i class="icon-GitHub"></i>yqni13 WEB_clock</a>
+            </li>
+            <li class="enabled-item" id="nav-item-clock"> <!-- TODO: onclick="two functions?"-->
+                <a href="#"><i class="icon-Clock"></i>Clock</a>
+            </li>
+            <li class="disabled-item" id="nav-item-worldclock">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                    <i class="icon-WorldClock" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-WorldClock')"></i>
+                    World Clock
+                </a>
+            </li>
+            <li class="disabled-item" id="nav-item-timer">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                    <i class="icon-Timer" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-Timer')"></i>
+                    Timer
+                </a>
+            </li>
+            <li class="disabled-item" id="nav-item-specialtimer2">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                    <i class="icon-SpecialTimer2" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-SpecialTimer2')"></i>
+                    Timer (Pomodoro)
+                </a>
+            </li>
+            <li class="disabled-item" id="nav-item-specialtimer1">
+                <a href="#" onmouseover="lockedTextOver(this)" onmouseout="lockedTextOut(this)">
+                    <i class="icon-SpecialTimer1" onmouseover="lockedImgOver(this)" 
+                    onmouseout="lockedImgOut(this, 'icon-SpecialTimer1')"></i>
+                    Timer (60-60-30)
+                </a>
+            </li>
+            <li class="enabled-item" id="nav-item-settings" onclick="navSettings()">
+                <a href="#">
+                    <i class="icon-Settings"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container" id="wrapper">
+        <!-- dynamic build for different designs -->
     </div>
-    <script src="main.js"></script>
+
+    <div class="container" id="wrapper-settings">
+        <div class="settings-preview" id="settings-preview-wrapper">
+            <div id="settings-preview-img"></div>
+        </div>
+        <div class="settings-content">
+            <div class="setting-options" id="theme-option">
+                <label for="themes">select appearance: </label>
+                <select name="themes" id="themes">
+                    <option value="darkmode">Dark Mode</option>
+                    <option value="lightmode">Light Mode</option>
+                </select>
+            </div>
+            <div class="setting-options" id="date-format-option">
+                <label for="dateformat">select date format: </label>
+                <select name="dateformat" id="dateformat">
+                    <option value="format1">mm/dd/yyyy</option>
+                    <option value="format2">dd.mm.yyyy</option>
+                    <option value="format3">yyyy-mm-dd</option>
+                    <option value="format4">dd-mm-yyyy</option>
+                </select>
+            </div>
+            <div class="setting-options" id="clock-design-option">
+                <label for="clockdesign">select clock design: </label>
+                <select name="clockdesign" id="clockdesign">
+                    <option value="design1">Digital #1</option>
+                    <option value="design2">Analog #1</option>
+                    <option value="design3">Digital #2</option>
+                    <option value="design4">Analog #2</option>
+                </select>
+            </div>
+            <div class="setting-options" id="clock-design-option">
+                <label for="clockcolor">select clock color: </label>
+                <input type="color" class="small-selectors" id="colorpicker">
+            </div>
+            <div class="setting-options" id="clock-design-option">
+                <label for="clockpreview">set preview off/on: </label>
+                <label class="custom-switch">
+                    <input type="checkbox" class="small-selectors" id="clockpreview">
+                    <span class="custom-slider round"></span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js" type="module" defer></script>
 </body>
 </html>
