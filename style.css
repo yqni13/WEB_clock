@@ -1,3 +1,12 @@
+@import "stylesheets/colors.css";
+@import "stylesheets/define.css";
+@import "stylesheets/icon.css";
+@import "stylesheets/navbar.css";
+@import "stylesheets/media.css";
+@import "stylesheets/settings.css";
+@import "stylesheets/clock-design.css";
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,46 +15,16 @@
 
 body {
     font-family: 'Inconsolata', monospace;      /* needed to activate blink effect */
-    background-color: #1c1c1c;                /* always use dark form of grey for dark mode */  
+    background-color: var(--body-bg);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;                              /* give body full size of current display */
+    height: 100vh;
 }
 
 .container {
-    display: flex;
-    height: 250px;
-    width: 250px;
-    justify-content: center;
+    display:flex;
+    order: 2;
+    width: 100%;
     align-items: center;
-    flex-direction: column;
-    border: 2px solid blue;
-    border-radius: 50%;
-    box-shadow:                                 /* shadow built by 3 different widths */
-        0 0 5px rgb(0,0,234),
-        0 0 10px rgb(0,0,234),
-        0 0 15px rgb(0,0,234);
-}
-
-#clock_time {
-    font-size: 2em;
-    color: #0044CC;
-}
-
-.blink-colon {
-    animation: blink 1s infinite linear;
-}
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    30% {
-        opacity: 0.25;
-    }
-}
-
-#clock_date {
-    color: grey;
+    justify-content: center;
 }
 
