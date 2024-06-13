@@ -73,6 +73,7 @@ export function setNewSettings(param) {
             var optionsClockDesign = document.getElementById('clockdesign');
             settingClockDesign = optionsClockDesign.options[optionsClockDesign.selectedIndex].value
             localStorage.setItem('setting-clockdesign', settingClockDesign);
+            setClockDesignSetting();
             break;
         }
         case 'clockcolor1': {
@@ -141,20 +142,35 @@ function setDateFormatSetting() {
 function setClockDesignSetting() {
     var setting = document.getElementById('clockdesign');
     switch(settingClockDesign) {
-        case 'design1':
+        case 'design1': {
             setting.selectedIndex = 0;
+            document.getElementById('clock-color-option2').style.display = 'none';
+            document.getElementById('clock-color-option3').style.display = 'none';
             break;
-        case 'design2':
+            }
+        case 'design2': {
             setting.selectedIndex = 1;
+            document.getElementById('clock-color-option2').style.display = 'flex';
+            document.getElementById('clock-color-option3').style.display = 'flex';
             break;
-        case 'design3':
+        }
+        case 'design3': {
             setting.selectedIndex = 2;
+            document.getElementById('clock-color-option2').style.display = 'none';
+            document.getElementById('clock-color-option3').style.display = 'none';
             break;
-        case 'design4':
+        }
+        case 'design4': {
             setting.selectedIndex = 3;
+            document.getElementById('clock-color-option2').style.display = 'flex';
+            document.getElementById('clock-color-option3').style.display = 'flex';
             break;
-        default:
+        }
+        default: {
             setting.selectedIndex = 0;
+            document.getElementById('clock-color-option2').style.display = 'none';
+            document.getElementById('clock-color-option3').style.display = 'none';
+        }
     }
 }
 

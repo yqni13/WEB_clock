@@ -27,7 +27,7 @@
 .wrapper_clock_design2 {
     width: 30rem;
     height: 30rem;
-    border: 7px solid var(--border-color);
+    /* border: 7px solid var(--border-color); */
     box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
         inset 4px 4px 10px rgba(0,0,0,0.5),
         inset -4px -4px 10px rgba(67,67,67,0.5),
@@ -135,7 +135,7 @@
     
     .hand.hour-hand_design2 {
         width: 30%;
-        z-index: 3;
+        z-index: 10;
     }
     
     .hand.minute-hand_design2 {
@@ -148,6 +148,28 @@
         background: var(--selected-color3);
         width: 45%;
         height: 2px;
+        z-index: 10;
+    }
+    .active_hours {
+        color: var(--text-color);
+    }
+    .passive_hours {
+        color:var(--disabled-grey);
+        opacity: 0.4;
+    }
+    #wrapper_am_design2 {
+        position: absolute;
+        top: 25%;
+        left: 45%;
+        z-index: 9;
+        font-size: 1.7em;
+    }
+    #wrapper_pm_design2 {
+        position: absolute;
+        top:65%;
+        left: 45%;
+        z-index: 9;
+        font-size:1.7em;
     }
 }
 

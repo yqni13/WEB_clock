@@ -34,11 +34,10 @@ $\texttt{\color{teal}{v1.3.0}}$
 
 ## Updates
 
-### $\textsf{last\ update\ 1.2.1\ >>\ {\color{pink}1.3.0}}$
+### $\textsf{last\ update\ 1.3.0\ >>\ {\color{pink}1.4.0}}$
 
-- $\textsf{\color{orange}Change:}$ First analog design ('Analog #1') for clock component added.
-- $\textsf{\color{orange}Change:}$ Two more color pickers added to settings (only effective for analog design at the moment).
-
+- $\textsf{\color{orange}Change:}$ Hint of "am" and "pm" to differ daytime added to analog design.
+- $\textsf{\color{orange}Change:}$ Number of color pickers in settings will appear regarding which design is selected.
 
 <br>
 

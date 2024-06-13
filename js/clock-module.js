@@ -72,6 +72,8 @@ function buildAnalogClock(design) {
     var pointerHour = document.createElement('div');
     var pointerMinute = document.createElement('div');
     var pointerSecond = document.createElement('div');
+    var am = document.createElement('div');
+    var pm = document.createElement('div');
 
     // assign
     clockWrapper.className = `wrapper_clock_${design}`;
@@ -84,9 +86,11 @@ function buildAnalogClock(design) {
     pointerHour.className = `hand hour-hand_${design}`;
     pointerMinute.className = `hand minute-hand_${design}`;
     pointerSecond.className = `hand second-hand_${design}`;
+    am.id = `wrapper_am_${design}`
+    pm.id = `wrapper_pm_${design}`
 
     // assemble
-    clockInner.append(pointerHour, pointerMinute, pointerSecond);
+    clockInner.append(pointerHour, pointerMinute, pointerSecond, am, pm);
     clockOuter.append(markingQuarter1, markingQuarter2, markingQuarter3, markingQuarter4, clockInner);
     clockWrapper.append(clockOuter);
     container.append(clockWrapper);
@@ -141,8 +145,20 @@ export function setAnalogTime(design) {
     const pointerHour = document.querySelector(`.hour-hand_${design}`);
     const pointerMinute = document.querySelector(`.minute-hand_${design}`);
     const pointerSecond = document.querySelector(`.second-hand_${design}`);
+    const am = document.getElementById(`wrapper_am_${design}`);
+    const pm = document.getElementById(`wrapper_pm_${design}`);
 
     const now = new Date();
+
+    if(now.getHours() > 12) {
+        pm.className = "active_hours"
+        am.className = "passive_hours";
+    } else {
+        am.className = "active_hours"
+        pm.className = "passive_hours";
+    }
+    am.innerHTML = "AM";
+    pm.innerHTML = "PM";
 
     const seconds = now.getSeconds();
     const secondsDegrees = ((seconds / 60) * 360) + 90;
