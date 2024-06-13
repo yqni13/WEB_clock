@@ -5,6 +5,7 @@ import * as clockdesign from './js/clock-module.js';
 function initApplication() {
     settings.setDefaultItems();
     document.body.setAttribute('data-theme', settings.settingTheme);
+    settings.displayNavVisibility();
     clockPage.start();
     document.getElementById('nav-item-clock').addEventListener("click", clockPage.start, false);
 }
@@ -17,7 +18,12 @@ function navClockPage() {
             closeAllComponents();
             setNavigationActive('nav-item-clock');
             clockdesign.buildClockPage(settings.settingClockDesign);
-            interval = setInterval(updateTime, 1000);
+            if(settings.settingClockDesign == 'design1' || settings.settingClockDesign == 'design3') {
+                interval = setInterval(clockdesign.updateTime, 1000, settings.settingClockDesign, settings.settingDateFormat);
+            }
+            else if (settings.settingClockDesign == 'design2' || settings.settingClockDesign == 'design4') {
+                interval = setInterval(clockdesign.setAnalogTime, 1000, settings.settingClockDesign);
+            }
         },
         stop() {
             clearInterval(interval);
@@ -41,50 +47,7 @@ function closeAllComponents() {
     container.innerHTML = '';
 }
 
-function updateTime() {
-    let currentDate = new Date();       //get timestamp
-    
-    let hour = document.getElementById(`hour_${settings.settingClockDesign}`);
-    let minute = document.getElementById(`minute_${settings.settingClockDesign}`);
-    let second = document.getElementById(`second_${settings.settingClockDesign}`);
 
-    let hourValue = currentDate.getHours();
-    let minuteValue = currentDate.getMinutes();
-    let secondValue = currentDate.getSeconds();
-
-    if (hourValue >= 0 && hourValue <= 9) { hourValue = "0" + hourValue; };
-    if (minuteValue >= 0 && minuteValue <= 9) { minuteValue = "0" + minuteValue; };
-    if (secondValue >= 0 && secondValue <= 9) { secondValue = "0" + secondValue; };
-
-    hour.innerHTML = hourValue;
-    minute.innerHTML = minuteValue;
-    second.innerHTML = secondValue;
-
-    let currentDay = currentDate.getDate();
-    if (currentDay >= 0 && currentDay <= 9) { currentDay = "0" + currentDay; };
-    let currentMonth = currentDate.getMonth()+1;
-    if (currentMonth >= 0 && currentMonth <= 9) { currentMonth = "0" + currentMonth; };
-    let currentYear = currentDate.getFullYear();
-
-    let divDate = document.getElementById(`clock_date_${settings.settingClockDesign}`);
-    switch(settings.settingDateFormat) {
-        case 'mm/dd/yyyy':
-            divDate.innerHTML = `${currentMonth}/${currentDay}/${currentYear}`;
-            break;
-        case 'dd.mm.yyyy':
-            divDate.innerHTML = `${currentDay}.${currentMonth}.${currentYear}`;
-            break;
-        case 'yyyy-mm-dd':
-            divDate.innerHTML = `${currentYear}-${currentMonth}-${currentDay}`;
-            break;
-        case 'dd-mm-yyyy':
-            divDate.innerHTML = `${currentDay}-${currentMonth}-${currentYear}`;
-            break;
-        default:
-            divDate.innerHTML = `${currentMonth}/${currentDay}/${currentYear}`;
-    }
-
-}
 
 window.lockedImgOver = function(item) {
     item.className = "icon-Locked";
