@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image/icon type" href="assets/favicon/favicon_clock.ico" />
     <title>CLOCK</title>
@@ -89,14 +90,33 @@
                     <option value="design4">Analog #2</option>
                 </select>
             </div>
-            <div class="setting-options" id="clock-design-option">
-                <label for="clockcolor">select clock color: </label>
-                <input type="color" class="small-selectors" id="colorpicker">
+            <div class="setting-options" id="clock-color-option1">
+                <label for="clockcolor1">select clock color: </label>
+                <input type="color" class="small-selectors" id="colorpicker1">
             </div>
-            <div class="setting-options" id="clock-design-option">
-                <label for="clockpreview">set preview off/on: </label>
+            <div class="setting-options" id="clock-color-option2">
+                <label for="clockcolor2">select minute/hour color: </label>
+                <input type="color" class="small-selectors" id="colorpicker2">
+            </div>
+            <div class="setting-options" id="clock-color-option3">
+                <label for="clockcolor3">select seconds color: </label>
+                <input type="color" class="small-selectors" id="colorpicker3">
+            </div>
+            <div class="setting-options disabled-setting-option" id="clock-color-option4">
+                <label for="clockcolor4">select clock color #4: </label>
+                <input type="color" class="small-selectors" id="colorpicker4" disabled>
+            </div>
+            <div class="setting-options" id="clock-preview-option">
+                <label for="clockpreview">set preview [off/on]: </label>
                 <label class="custom-switch">
                     <input type="checkbox" class="small-selectors" id="clockpreview">
+                    <span class="custom-slider round"></span>
+                </label>
+            </div>
+            <div class="setting-options" id="nav-visibility-option">
+                <label for="navvisibility">show nav-menu [off/on]: </label>
+                <label class="custom-switch">
+                    <input type="checkbox" class="small-selectors" id="navvisibility">
                     <span class="custom-slider round"></span>
                 </label>
             </div>
