@@ -2,53 +2,209 @@
 .wrapper_clock_design1 {
     display: flex;
     aspect-ratio: 1 / 1;
-    width: 250px;
+    width: 40%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 2px solid var(--select-clockcolor);
+    border: 2px solid var(--selected-color1);
     border-radius: 50%;
     box-shadow:                                 /* shadow built by 3 different widths */
-        0 0 5px var(--select-clockcolor),
-        0 0 10px var(--select-clockcolor),
-        0 0 15px var(--select-clockcolor);
+        0 0 5px var(--selected-color1),
+        0 0 10px var(--selected-color1),
+        0 0 15px var(--selected-color1);
 
     #clock_time_design1 {
-        font-size: 2em;
+        font-size: 7.5vw;
         color: var(--text-color);
+        font-family: 'Share Tech Mono', monospace;
+        text-shadow: 0 0 20px var(--selected-color1),  0 0 20px rgba(10, 175, 230, 0);
     }    
 
     #clock_date_design1 {
+        font-size: 4vw;
         color: var(--border-color);
+        font-family: 'Share Tech Mono', monospace;
+        text-shadow: 0 0 20px var(--selected-color1),  0 0 20px rgba(10, 175, 230, 0);
     }
 }
 
-
-
+/* clock design #2 */
+.wrapper_clock_design2 {
+    width: 30rem;
+    height: 30rem;
+    /* border: 7px solid var(--border-color); */
+    box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+        inset 4px 4px 10px rgba(0,0,0,0.5),
+        inset -4px -4px 10px rgba(67,67,67,0.5),
+        4px 4px 10px rgba(0,0,0,0.3);
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    
+    .outer-clock-face_design2 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        background: var(--ash-grey);
+        overflow: hidden;
+    }
+    
+    .outer-clock-face_design2::after {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg)
+    }
+    
+    .outer-clock-face_design2::before,
+    .outer-clock-face_design2::after,
+    .outer-clock-face_design2 .marking{
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 100%;
+        background: var(--selected-color1);
+        z-index: 0;
+        left: 49%;
+    }
+    
+    .outer-clock-face_design2 .marking {
+        background: #bdbdcb;
+        width: 3px;
+    }
+    
+    .outer-clock-face_design2 .marking.marking-1_design2 {
+        -webkit-transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+        transform: rotate(30deg)
+    }
+    
+    .outer-clock-face_design2 .marking.marking-2_design2 {
+        -webkit-transform: rotate(60deg);
+        -moz-transform: rotate(60deg);
+        transform: rotate(60deg)
+    }
+    
+    .outer-clock-face_design2 .marking.marking-3_design2 {
+        -webkit-transform: rotate(120deg);
+        -moz-transform: rotate(120deg);
+        transform: rotate(120deg)
+    }
+    
+    .outer-clock-face_design2 .marking.marking-4_design2 {
+        -webkit-transform: rotate(150deg);
+        -moz-transform: rotate(150deg);
+        transform: rotate(150deg)
+    }
+    
+    .inner-clock-face_design2 {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        background: var(--ash-grey);
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        z-index: 1;
+    }
+    
+    .inner-clock-face_design2::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16px;
+        height: 16px;
+        border-radius: 18px;
+        margin-left: -9px;
+        margin-top: -6px;
+        background: #4d4b63;
+        z-index: 11;
+    }
+    
+    .hand {
+        width: 50%;
+        right: 50%;
+        height: 6px;
+        background: var(--selected-color2);
+        position: absolute;
+        top: 50%;
+        border-radius: 6px;
+        transform-origin: 100%;
+        transform: rotate(90deg);
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    }
+    
+    .hand.hour-hand_design2 {
+        width: 30%;
+        z-index: 10;
+    }
+    
+    .hand.minute-hand_design2 {
+        height: 3px;
+        z-index: 10;
+        width: 40%;
+    }
+    
+    .hand.second-hand_design2 {
+        background: var(--selected-color3);
+        width: 45%;
+        height: 2px;
+        z-index: 10;
+    }
+    .active_hours {
+        color: var(--text-color);
+        opacity: 0.6;
+    }
+    .passive_hours {
+        color:var(--disabled-grey);
+        opacity: 0.4;
+    }
+    #wrapper_am_design2 {
+        position: absolute;
+        top: 25%;
+        left: 45%;
+        z-index: 9;
+        font-size: 1.7em;
+    }
+    #wrapper_pm_design2 {
+        position: absolute;
+        top:65%;
+        left: 45%;
+        z-index: 9;
+        font-size:1.7em;
+    }
+}
 
 
 /* clock design #3 */
 .wrapper_clock_design3 {
     display: flex;
-    aspect-ratio: 1 / 1;
-    width: 25vw;
+    height:100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid var(--select-clockcolor);
-    border-radius: 5%;
-    box-shadow:                                 /* shadow built by 3 different widths */
-        0 0 5px var(--select-clockcolor),
-        0 0 10px var(--select-clockcolor),
-        0 0 15px var(--select-clockcolor);
+    background: radial-gradient(ellipse at center,  var(--design3-bg)  0%, var(--body-bg) 70%);
 
     #clock_time_design3 {
-        font-size: 2em;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 7.5vw;
+        letter-spacing: 0.05em;
+        padding: 5px 0;
         color: var(--text-color);
+        text-shadow: 0 0 20px var(--design3-shadow),  0 0 20px rgba(10, 175, 230, 0);
     }    
 
     #clock_date_design3 {
-        color: var(--border-color);
+        color: var(--text-color);
+        opacity: 0.5;
+        font-size: 4vw;
+        text-shadow: 0 0 10px var(--design3-shadow),  0 0 20px rgba(10, 175, 230, 0);
+        font-family: 'Share Tech Mono', monospace;
     }
 }
 
