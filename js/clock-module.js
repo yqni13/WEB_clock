@@ -98,7 +98,7 @@ function buildAnalogClock(design) {
 
 
 export function updateTime(design, dateformat) {
-    let currentDate = new Date();       //get timestamp
+    let currentDate = new Date();
     
     let hour = document.getElementById(`hour_${design}`);
     let minute = document.getElementById(`minute_${design}`);

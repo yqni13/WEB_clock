@@ -189,10 +189,6 @@
     align-items: center;
     flex-direction: column;
     background: radial-gradient(ellipse at center,  var(--design3-bg)  0%, var(--body-bg) 70%);
-    /* box-shadow:
-        0 0 5px var(--selected-color1),
-        0 0 10px var(--selected-color1),
-        0 0 15px var(--selected-color1); */
 
     #clock_time_design3 {
         font-family: 'Share Tech Mono', monospace;

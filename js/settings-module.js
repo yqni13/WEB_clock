@@ -308,7 +308,4 @@ function displayNotFixedNavBar() {
         if(!isActivelyVisible) navbar.style.display = 'none';
         clearInterval(timeout);
     }, 3000);
-
-
 }
-
