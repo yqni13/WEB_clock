@@ -5,6 +5,7 @@ export var settingClockColor1 = localStorage.getItem('setting-clockcolor1') || '
 export var settingClockColor2 = localStorage.getItem('setting-clockcolor2') || '#910f4e';
 export var settingClockColor3 = localStorage.getItem('setting-clockcolor3') || '#910f4e';
 export var settingClockPreview = localStorage.getItem('setting-clockpreview') || true;
+export var settingNavVisibility = localStorage.getItem('setting-navvisibility') || true;
 
 const parameterThemes = 'themes';
 const parameterDateFormat = 'dateformat';
@@ -13,6 +14,9 @@ const parameterClockColor1 = 'clockcolor1';
 const parameterClockColor2 = 'clockcolor2';
 const parameterClockColor3 = 'clockcolor3';
 const parameterClockPreview = 'clockpreview';
+const parameterNavVisibility = 'navvisibility';
+
+var isActivelyVisible = true;
 
 export function openSettings() {
     settingTheme = localStorage.getItem('setting-theme') || 'Dark Mode';
@@ -22,11 +26,13 @@ export function openSettings() {
     settingClockColor2 = localStorage.getItem('setting-clockcolor2') || '#910f4e';
     settingClockColor3 = localStorage.getItem('setting-clockcolor3') || '#910f4e';
     settingClockPreview = localStorage.getItem('setting-clockpreview') || true;
+    settingNavVisibility = localStorage.getItem('setting-navvisibility') || true;
 
     buildSettingsPage();
 }
 
 function buildSettingsPage() {
+
     document.getElementById('themes').addEventListener('change', setNewSettings, false);
     document.getElementById('themes').parameter = parameterThemes;
     document.getElementById('dateformat').addEventListener('change', setNewSettings, false);
@@ -41,6 +47,8 @@ function buildSettingsPage() {
     document.getElementById('colorpicker3').parameter = parameterClockColor3;
     document.getElementById('clockpreview').addEventListener('change', setNewSettings, false);
     document.getElementById('clockpreview').parameter = parameterClockPreview;
+    document.getElementById('navvisibility').addEventListener('change', setNewSettings, false);
+    document.getElementById('navvisibility').parameter = parameterNavVisibility;
     document.getElementById('wrapper-settings').style.display = "flex";
 
     setThemeSetting();
@@ -51,6 +59,8 @@ function buildSettingsPage() {
     setClockColor3Setting();
     setClockPreviewSetting();
     displayClockPreview();
+    setNavBarVisibilitySetting();
+    displayNavVisibility();
 }
 
 export function setNewSettings(param) {
@@ -100,6 +110,12 @@ export function setNewSettings(param) {
             displayClockPreview();
             break;
         }
+        case 'navvisibility': {
+            settingNavVisibility = document.getElementById('navvisibility').checked;
+            localStorage.setItem('setting-navvisibility', settingNavVisibility);
+            displayNavVisibility();
+            break;
+        }
         default:
             break;
     }
@@ -144,30 +160,39 @@ function setClockDesignSetting() {
     switch(settingClockDesign) {
         case 'design1': {
             setting.selectedIndex = 0;
+            document.getElementById('clock-color-option1').children[0].innerText = 'select border color: ';
+            document.getElementById('clock-color-option1').style.display = 'flex';
             document.getElementById('clock-color-option2').style.display = 'none';
             document.getElementById('clock-color-option3').style.display = 'none';
             break;
-            }
+        }
         case 'design2': {
             setting.selectedIndex = 1;
+            document.getElementById('clock-color-option1').children[0].innerText = 'select quarter colors: ';
+            document.getElementById('clock-color-option1').style.display = 'flex';
             document.getElementById('clock-color-option2').style.display = 'flex';
             document.getElementById('clock-color-option3').style.display = 'flex';
             break;
         }
         case 'design3': {
             setting.selectedIndex = 2;
+            document.getElementById('clock-color-option1').style.display = 'none';
             document.getElementById('clock-color-option2').style.display = 'none';
             document.getElementById('clock-color-option3').style.display = 'none';
             break;
         }
         case 'design4': {
             setting.selectedIndex = 3;
+            document.getElementById('clock-color-option1').children[0].innerText = 'select quarter colors: ';
+            document.getElementById('clock-color-option1').style.display = 'flex';
             document.getElementById('clock-color-option2').style.display = 'flex';
             document.getElementById('clock-color-option3').style.display = 'flex';
             break;
         }
         default: {
             setting.selectedIndex = 0;
+            document.getElementById('clock-color-option1').children[0].innerText = 'select border color: ';
+            document.getElementById('clock-color-option1').style.display = 'flex';
             document.getElementById('clock-color-option2').style.display = 'none';
             document.getElementById('clock-color-option3').style.display = 'none';
         }
@@ -201,6 +226,26 @@ function setClockPreviewSetting() {
     }
 }
 
+function setNavBarVisibilitySetting() {
+    var setting = document.getElementById('navvisibility');
+    switch(settingNavVisibility) {
+        case 'true': {
+            setting.checked = true;
+            isActivelyVisible = true;
+            break;
+        }
+        case 'false': {
+            setting.checked = false;
+            isActivelyVisible = false;
+            break;
+        }
+        default: {
+            setting.checked = false;
+            isActivelyVisible = false;
+        }
+    }
+}
+
 export function setDefaultItems() {
     if(!localStorage.getItem('setting-theme')) localStorage.setItem('setting-theme', 'darkmode');
     if(!localStorage.getItem('setting-dateformat')) localStorage.setItem('setting-dateformat', 'dd.mm.yyyy');
@@ -212,6 +257,7 @@ export function setDefaultItems() {
     if(!localStorage.getItem('setting-clockcolor3')) localStorage.setItem('setting-clockcolor3', '#910f4e');
     document.documentElement.style.setProperty('--selected-color3', settingClockColor3);
     if(!localStorage.getItem('setting-clockpreview')) localStorage.setItem('setting-clockpreview', false);
+    if(!localStorage.getItem('setting-navvisibility')) localStorage.setItem('setting-navvisibility', true);
 }
 
 function displayClockPreview() {
@@ -229,3 +275,40 @@ function displayClockPreview() {
             preview.style.display = 'block';
     }
 }
+
+export function displayNavVisibility() {
+    var navbar = document.querySelector('.nav-bar');
+    switch(settingNavVisibility) {
+        case 'true':
+        case true: {
+            isActivelyVisible = true;
+            document.body.removeEventListener('click', displayNotFixedNavBar);
+            navbar.style.display = 'flex';
+            break;
+        }
+        case 'false':
+        case false: {
+            isActivelyVisible = false;
+            document.body.addEventListener('click', displayNotFixedNavBar, false);
+            break;
+        }
+        default: {
+            isActivelyVisible = true;
+            document.body.removeEventListener('click', displayNotFixedNavBar);
+            navbar.style.display = 'flex';
+        }
+    }
+}
+
+function displayNotFixedNavBar() {
+    var timeout;
+    var navbar = document.querySelector('.nav-bar');
+    navbar.style.display = 'flex';
+    timeout = setTimeout(() => {
+        if(!isActivelyVisible) navbar.style.display = 'none';
+        clearInterval(timeout);
+    }, 3000);
+
+
+}
+

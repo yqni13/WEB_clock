@@ -3,6 +3,9 @@
 
     --shadow-blue: rgb(0,0,234);
     --alice-blue: #F0F8FF;
+    --ice-blue: #daf6ff;
+    --mystery-sea: #0a2e38;
+    --heaven-blue: rgba(10, 175, 230, 1);
 
     --obsidian-black: #0B1215;
     --charcoal-grey: #171717;
@@ -12,22 +15,31 @@
     --ash-grey: #282828;
     --forbidden-red: #52191EC7;
     --forbidden-blue: rgba(11, 55, 98, 0.8);
+    --light-flame: #e1be5d;
+    --peaceful-embers: #edd48f;
 
     --selected-color1: #0f9154;
     --selected-color2: #0f9154;
     --selected-color3: #911175b4;
 
     --yqni13-gradient: linear-gradient(167deg, #650D88 42%, #BC0C79 90%);
+    --darksea-gradient: radial-gradient(ellipse at center,  #0a2e38  0%, var(--body-bg) 70%);
 }
 
 [data-theme='lightmode'] {
     --body-bg: var(--alice-blue);
     --text-color: var(--deepnavy-blue);
     --border-color: var(--deepnavy-blue);
+
+    --design3-bg: var(--light-flame);
+    --design3-shadow: var(--peaceful-embers);
 }
 
 [data-theme='darkmode'] {
     --body-bg: var(--bg-dark);
     --text-color: var(--alice-blue);
     --border-color: var(--disabled-grey);
+    
+    --design3-bg: var(--mystery-sea);
+    --design3-shadow: var(--heaven-blue);
 }

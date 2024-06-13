@@ -2,7 +2,7 @@
 .wrapper_clock_design1 {
     display: flex;
     aspect-ratio: 1 / 1;
-    width: 250px;
+    width: 40%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -14,12 +14,17 @@
         0 0 15px var(--selected-color1);
 
     #clock_time_design1 {
-        font-size: 2em;
+        font-size: 7.5vw;
         color: var(--text-color);
+        font-family: 'Share Tech Mono', monospace;
+        text-shadow: 0 0 20px var(--selected-color1),  0 0 20px rgba(10, 175, 230, 0);
     }    
 
     #clock_date_design1 {
+        font-size: 4vw;
         color: var(--border-color);
+        font-family: 'Share Tech Mono', monospace;
+        text-shadow: 0 0 20px var(--selected-color1),  0 0 20px rgba(10, 175, 230, 0);
     }
 }
 
@@ -152,6 +157,7 @@
     }
     .active_hours {
         color: var(--text-color);
+        opacity: 0.6;
     }
     .passive_hours {
         color:var(--disabled-grey);
@@ -177,25 +183,32 @@
 /* clock design #3 */
 .wrapper_clock_design3 {
     display: flex;
-    aspect-ratio: 1 / 1;
-    width: 25vw;
+    height:100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid var(--selected-color1);
-    border-radius: 5%;
-    box-shadow:                                 /* shadow built by 3 different widths */
+    background: radial-gradient(ellipse at center,  var(--design3-bg)  0%, var(--body-bg) 70%);
+    /* box-shadow:
         0 0 5px var(--selected-color1),
         0 0 10px var(--selected-color1),
-        0 0 15px var(--selected-color1);
+        0 0 15px var(--selected-color1); */
 
     #clock_time_design3 {
-        font-size: 2em;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 7.5vw;
+        letter-spacing: 0.05em;
+        padding: 5px 0;
         color: var(--text-color);
+        text-shadow: 0 0 20px var(--design3-shadow),  0 0 20px rgba(10, 175, 230, 0);
     }    
 
     #clock_date_design3 {
-        color: var(--border-color);
+        color: var(--text-color);
+        opacity: 0.5;
+        font-size: 4vw;
+        text-shadow: 0 0 10px var(--design3-shadow),  0 0 20px rgba(10, 175, 230, 0);
+        font-family: 'Share Tech Mono', monospace;
     }
 }
 

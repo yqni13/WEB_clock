@@ -150,7 +150,7 @@ export function setAnalogTime(design) {
 
     const now = new Date();
 
-    if(now.getHours() > 12) {
+    if(now.getHours() >= 12) {
         pm.className = "active_hours"
         am.className = "passive_hours";
     } else {

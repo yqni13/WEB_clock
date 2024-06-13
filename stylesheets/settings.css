@@ -110,6 +110,7 @@
 
 /* disabled color picker */
 .disabled-setting-option {
+    display: none;
     label {
         color: var(--disabled-grey)!important;
         text-decoration: line-through!important;

@@ -5,6 +5,7 @@ import * as clockdesign from './js/clock-module.js';
 function initApplication() {
     settings.setDefaultItems();
     document.body.setAttribute('data-theme', settings.settingTheme);
+    settings.displayNavVisibility();
     clockPage.start();
     document.getElementById('nav-item-clock').addEventListener("click", clockPage.start, false);
 }
