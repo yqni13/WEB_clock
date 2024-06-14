@@ -271,14 +271,14 @@ function displayClockPreview() {
     switch(settingClockPreview) {
         case 'true':
         case true:
-            preview.style.display = 'block';
+            preview.style.display = 'flex';
             break;
         case 'false':
         case false:
             preview.style.display = 'none';
             break;
         default:
-            preview.style.display = 'block';
+            preview.style.display = 'flex';
     }
 }
 
