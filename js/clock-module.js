@@ -85,7 +85,6 @@ function buildAnalogClock(design) {
     pointerSecond.className = `hand second-hand_${design}`;
     dot.className = `dot_${design}`;
     diallines.className = `diallines_${design}`;
-    // infoWrapper.className = `wrapper_info_${design}`;
     if(design == 'design2') {
         markingQuarter1.className = `marking marking-1_${design}`;
         markingQuarter2.className = `marking marking-2_${design}`;
