@@ -1,6 +1,6 @@
 
 /* desktop device, full width */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
     body {
         flex-direction: row;
     }
@@ -11,6 +11,44 @@
         ul {
             height: 100%;
             flex-direction: column;
+        }
+    }
+
+    .wrapper_clock_design1 {
+        width: 40vw;
+    }
+
+    #wrapper-settings {
+        flex-direction: column;
+        .settings-preview {
+            width: 100%!important;
+            height: 35%!important;
+            border-right: none;
+            border-bottom: solid 1px var(--border-color);
+            text-align: -webkit-center;
+            .settings-preview-box {
+                margin: 25px 0;
+                width: 100%;
+                #settings-preview-img {
+                    margin: 0!important;
+                    height: 100%!important;
+                }
+            }
+        }
+        .settings-content {
+            width: 70%!important;
+            display: flex!important;
+            flex-direction: row!important;
+            flex-wrap: wrap!important;
+            height: 65%!important;
+            margin: 25px 0;
+            align-content: baseline!important;
+
+            .setting-options {
+                padding: 0 5vw!important;
+                margin: 10px 0!important;
+                
+            }
         }
     }
 }
@@ -56,6 +94,92 @@
         order: 1!important;
         height: 100%;
     }
+
+    .wrapper_clock_design1 {
+        width: 45vw;
+    }
+
+    #wrapper-settings {
+        .settings-preview {
+            width: 40%!important;
+            .settings-preview-box {
+                width: 100%;
+            }
+        }
+        .settings-content {
+            width: 60%!important;
+            .setting-options {
+                padding: 0 5vw!important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar {
+        ul {
+            li {
+                i {
+                    margin: 0 3.5vw!important;
+                    width: 30px!important;
+                    height: 30px!important;
+                }
+            }
+        }
+    }
+
+    .wrapper_clock_design1 {
+        width: 55vw;
+        #clock_time_design1 {
+            font-size: 10vw!important;
+        }
+        #clock_date_design1 {
+            font-size: 6vw!important;
+        }
+    }
+
+    .wrapper_clock_design3 {
+        #clock_time_design3 {
+            font-size: 12vw!important;
+        }
+        #clock_date_design3 {
+            font-size: 8vw!important;
+        }
+    }
+
+    #wrapper-settings {
+        flex-direction: column;
+        .settings-preview {
+            width: 100%!important;
+            height: 35%!important;
+            border-right: none;
+            border-bottom: solid 1px var(--border-color);
+            text-align: -webkit-center;
+            .settings-preview-box {
+                margin: 25px 0;
+                width: 100%;
+                #settings-preview-img {
+                    margin: 0!important;
+                    height: 100%!important;
+                }
+            }
+        }
+        .settings-content {
+            width: 70%!important;
+            display: flex!important;
+            flex-direction: row!important;
+            flex-wrap: wrap!important;
+            height: 65%!important;
+            margin: 25px 0;
+            align-content: baseline!important;
+
+            .setting-options {
+                padding: 0 5vw!important;
+                margin: 10px 0!important;
+                
+            }
+        }
+    }
 }
 
 /* mobile device, small nav centered bottom */
@@ -67,6 +191,53 @@
                     margin: 0 3.5vw!important;
                     width: 30px!important;
                     height: 30px!important;
+                }
+            }
+        }
+    }
+
+    .wrapper_clock_design1 {
+        width: 60vw;
+    }
+
+    #wrapper-settings {
+
+        .settings-content {
+            width: 85%!important;
+
+            .setting-options {
+                padding: 0 5vw!important;
+
+                label {
+                    font-size: 4vw!important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .nav-bar {
+        ul {
+            li {
+                i {
+                    margin: 0 3.5vw!important;
+                    width: 30px!important;
+                    height: 30px!important;
+                }
+            }
+        }
+    }
+
+    #wrapper-settings {
+        .settings-content {
+            width: 100%!important;
+
+            .setting-options {
+                padding: 0 5vw!important;
+
+                label {
+                    font-size: 5vw!important;
                 }
             }
         }
