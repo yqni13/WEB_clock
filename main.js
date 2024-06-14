@@ -18,12 +18,12 @@ function navClockPage() {
             closeAllComponents();
             setNavigationActive('nav-item-clock');
             clockdesign.buildClockPage(settings.settingClockDesign);
-            if(settings.settingClockDesign == 'design1' || settings.settingClockDesign == 'design3') {
+            if(settings.settingClockDesign == 'design1' || settings.settingClockDesign == 'design3')
                 interval = setInterval(clockdesign.updateTime, 1000, settings.settingClockDesign, settings.settingDateFormat);
-            }
-            else if (settings.settingClockDesign == 'design2' || settings.settingClockDesign == 'design4') {
+            else if (settings.settingClockDesign == 'design2')
                 interval = setInterval(clockdesign.setAnalogTime, 1000, settings.settingClockDesign);
-            }
+            else if (settings.settingClockDesign == 'design4') 
+                interval = setInterval(clockdesign.setAnalogTimeDesign4, 1000, settings.settingClockDesign, settings.settingDateFormat);
         },
         stop() {
             clearInterval(interval);

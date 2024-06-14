@@ -6,22 +6,31 @@
 }
 
 .settings-preview {
-    width: 30%;
     height: 100%;
-    align-content: center;
     border-right: solid 1px var(--border-color);
-    #settings-preview-img {
-        background-image: url("../assets/img/not_available.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        aspect-ratio: 1 / 1;
-        margin: 0 25px;
+    .settings-preview-box {
+        align-content: center;
+        #settings-preview-img {
+            background-image: url("../assets/img/not_available.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            aspect-ratio: 1 / 1;
+            margin: 0 25px;
+        }
     }
 }
 
 .settings-content {
     width: 70%;
+    height: 100%;
     justify-content: center;
+    overflow: auto;
+    align-content: center;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
 }
 
 .setting-options {
@@ -29,11 +38,16 @@
     padding: 0 15%;
     display: flex;
     margin: 25px 0;
+
     label { 
         color: var(--text-color);
         font-size: 1.3rem;
         align-content: center;
-        flex: 1; 
+        flex: 1;
+        cursor: default;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
     select {
         width: 35%;
@@ -41,6 +55,8 @@
         color: var(--text-color);
         background-color: var(--body-bg);
         border-color: var(--border-color);
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
     }
     input {
         background-color: var(--body-bg);
