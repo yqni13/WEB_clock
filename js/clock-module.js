@@ -64,36 +64,81 @@ function buildAnalogClock(design) {
     // create
     var clockWrapper = document.createElement('div');
     var clockOuter = document.createElement('div');
-    var markingQuarter1 = document.createElement('div');
-    var markingQuarter2 = document.createElement('div');
-    var markingQuarter3 = document.createElement('div');
-    var markingQuarter4 = document.createElement('div');
+    var markingQuarter1 = document.createElement('span');
+    var markingQuarter2 = document.createElement('span');
+    var markingQuarter3 = document.createElement('span');
+    var markingQuarter4 = document.createElement('span');
     var clockInner = document.createElement('div');
     var pointerHour = document.createElement('div');
     var pointerMinute = document.createElement('div');
     var pointerSecond = document.createElement('div');
     var am = document.createElement('div');
     var pm = document.createElement('div');
+    var dot = document.createElement('div');
+    var diallines = document.createElement('div');
+    var infoWrapper = document.createElement('div');
 
     // assign
     clockWrapper.className = `wrapper_clock_${design}`;
-    clockOuter.className = `outer-clock-face_${design}`;
-    markingQuarter1.className = `marking marking-1_${design}`;
-    markingQuarter2.className = `marking marking-2_${design}`;
-    markingQuarter3.className = `marking marking-3_${design}`;
-    markingQuarter4.className = `marking marking-4_${design}`;
-    clockInner.className = `inner-clock-face_${design}`;
     pointerHour.className = `hand hour-hand_${design}`;
     pointerMinute.className = `hand minute-hand_${design}`;
     pointerSecond.className = `hand second-hand_${design}`;
-    am.id = `wrapper_am_${design}`
-    pm.id = `wrapper_pm_${design}`
+    dot.className = `dot_${design}`;
+    diallines.className = `diallines_${design}`;
+    // infoWrapper.className = `wrapper_info_${design}`;
+    if(design == 'design2') {
+        markingQuarter1.className = `marking marking-1_${design}`;
+        markingQuarter2.className = `marking marking-2_${design}`;
+        markingQuarter3.className = `marking marking-3_${design}`;
+        markingQuarter4.className = `marking marking-4_${design}`;
+        clockOuter.className = `outer-clock-face_${design}`;
+        clockInner.className = `inner-clock-face_${design}`;
+        am.id = `wrapper_am_${design}`
+        pm.id = `wrapper_pm_${design}`
+    }
+    else if (design == 'design4') {
+        am.className = `info date_${design}`
+        pm.className = `info day_${design}`
+        markingQuarter1.className = `h3_${design}`;
+        markingQuarter2.className = `h6_${design}`;
+        markingQuarter3.className = `h9_${design}`;
+        markingQuarter4.className = `h12_${design}`;
+        markingQuarter1.innerHTML = 3
+        markingQuarter2.innerHTML = 6
+        markingQuarter3.innerHTML = 9
+        markingQuarter4.innerHTML = 12
+    }
 
     // assemble
-    clockInner.append(pointerHour, pointerMinute, pointerSecond, am, pm);
-    clockOuter.append(markingQuarter1, markingQuarter2, markingQuarter3, markingQuarter4, clockInner);
-    clockWrapper.append(clockOuter);
-    container.append(clockWrapper);
+    switch(design) {
+        case 'design2': {
+            clockInner.append(pointerHour, pointerMinute, pointerSecond, am, pm);
+            clockOuter.append(markingQuarter1, markingQuarter2, markingQuarter3, markingQuarter4, clockInner);
+            clockWrapper.append(clockOuter);
+            container.append(clockWrapper);
+            break;
+        }
+        case 'design4': {
+            clockInner.append(markingQuarter1, markingQuarter2, markingQuarter3, markingQuarter4);
+            clockOuter.append(pointerHour, pointerMinute, pointerSecond);
+            infoWrapper.append(am, pm)
+            clockWrapper.append(infoWrapper, dot, clockOuter, clockInner, diallines);
+            for (var i = 1; i < 60; i++) {
+                var clockMinuteMarkers = document.createElement('div');
+                clockMinuteMarkers.className = `diallines_${design}`;
+                clockMinuteMarkers.style.transform = "rotate(" + 6 * i + "deg)";
+                clockWrapper.append(clockMinuteMarkers);
+            }
+            container.append(clockWrapper);
+            break;
+        }
+        default: {
+            clockInner.append(pointerHour, pointerMinute, pointerSecond, am, pm);
+            clockOuter.append(markingQuarter1, markingQuarter2, markingQuarter3, markingQuarter4, clockInner);
+            clockWrapper.append(clockOuter);
+            container.append(clockWrapper);
+        }
+    }
 }
 
 
@@ -150,7 +195,7 @@ export function setAnalogTime(design) {
 
     const now = new Date();
 
-    if(now.getHours() >= 12) {
+    if(design == 'design2' && now.getHours() >= 12) {
         pm.className = "active_hours"
         am.className = "passive_hours";
     } else {
@@ -172,3 +217,63 @@ export function setAnalogTime(design) {
     const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
     pointerHour.style.transform = `rotate(${hourDegrees}deg)`;
 }
+
+// TODO: simpfliy setAnalogTime/setAnalogTimeDesign4 to use for both designs same function
+export function setAnalogTimeDesign4(design, dateformat) {
+
+    var writtenDay = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ],
+
+    date = new Date(),
+    hour = date.getHours(),
+    minute = date.getMinutes(),
+    second = date.getSeconds(),
+    currentDay = date.getDate(),
+    currentMonth = date.getMonth() + 1,
+    currentYear = date.getFullYear(),
+
+    hDeg = hour * 30 + minute * (360/720),
+    mDeg = minute * 6 + second * (360/3600),
+    sDeg = second * 6,
+
+    hEl = document.querySelector(`.hour-hand_${design}`),
+    mEl = document.querySelector(`.minute-hand_${design}`),
+    sEl = document.querySelector(`.second-hand_${design}`),
+    dateEl = document.querySelector(`.date_${design}`),
+    dayEl = document.querySelector(`.day_${design}`);
+
+    var weekday = writtenDay[date.getDay()];
+
+    if(currentMonth < 9) {
+        currentMonth = "0" + currentMonth;
+    }
+
+    hEl.style.transform = "rotate("+hDeg+"deg)";
+    mEl.style.transform = "rotate("+mDeg+"deg)";
+    sEl.style.transform = "rotate("+sDeg+"deg)";
+    switch(dateformat) {
+        case 'mm/dd/yyyy':
+            dateEl.innerHTML = `${currentMonth}/${currentDay}/${currentYear}`;
+            break;
+        case 'dd.mm.yyyy':
+            dateEl.innerHTML = `${currentDay}.${currentMonth}.${currentYear}`;
+            break;
+        case 'yyyy-mm-dd':
+            dateEl.innerHTML = `${currentYear}-${currentMonth}-${currentDay}`;
+            break;
+        case 'dd-mm-yyyy':
+            dateEl.innerHTML = `${currentDay}-${currentMonth}-${currentYear}`;
+            break;
+        default:
+            dateEl.innerHTML = `${currentMonth}/${currentDay}/${currentYear}`;
+    }
+    dayEl.innerHTML = weekday;
+}
+
