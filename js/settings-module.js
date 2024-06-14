@@ -156,10 +156,12 @@ function setDateFormatSetting() {
 }
 
 function setClockDesignSetting() {
+    // set conditions to display certain settings and adapt description
     var setting = document.getElementById('clockdesign');
     switch(settingClockDesign) {
         case 'design1': {
             setting.selectedIndex = 0;
+            document.getElementById('date-format-option').style.display = 'flex';
             document.getElementById('clock-color-option1').children[0].innerText = 'select border color: ';
             document.getElementById('clock-color-option1').style.display = 'flex';
             document.getElementById('clock-color-option2').style.display = 'none';
@@ -168,6 +170,7 @@ function setClockDesignSetting() {
         }
         case 'design2': {
             setting.selectedIndex = 1;
+            document.getElementById('date-format-option').style.display = 'none';
             document.getElementById('clock-color-option1').children[0].innerText = 'select quarter colors: ';
             document.getElementById('clock-color-option1').style.display = 'flex';
             document.getElementById('clock-color-option2').style.display = 'flex';
@@ -176,6 +179,7 @@ function setClockDesignSetting() {
         }
         case 'design3': {
             setting.selectedIndex = 2;
+            document.getElementById('date-format-option').style.display = 'flex';
             document.getElementById('clock-color-option1').style.display = 'none';
             document.getElementById('clock-color-option2').style.display = 'none';
             document.getElementById('clock-color-option3').style.display = 'none';
@@ -183,6 +187,7 @@ function setClockDesignSetting() {
         }
         case 'design4': {
             setting.selectedIndex = 3;
+            document.getElementById('date-format-option').style.display = 'flex';
             document.getElementById('clock-color-option1').children[0].innerText = 'select quarter colors: ';
             document.getElementById('clock-color-option1').style.display = 'flex';
             document.getElementById('clock-color-option2').style.display = 'flex';
@@ -191,6 +196,7 @@ function setClockDesignSetting() {
         }
         default: {
             setting.selectedIndex = 0;
+            document.getElementById('date-format-option').style.display = 'flex';
             document.getElementById('clock-color-option1').children[0].innerText = 'select border color: ';
             document.getElementById('clock-color-option1').style.display = 'flex';
             document.getElementById('clock-color-option2').style.display = 'none';
@@ -265,14 +271,14 @@ function displayClockPreview() {
     switch(settingClockPreview) {
         case 'true':
         case true:
-            preview.style.display = 'block';
+            preview.style.display = 'flex';
             break;
         case 'false':
         case false:
             preview.style.display = 'none';
             break;
         default:
-            preview.style.display = 'block';
+            preview.style.display = 'flex';
     }
 }
 

@@ -1,10 +1,10 @@
 # yqni13 WEB_clock
-$\texttt{\color{teal}{v1.4.0}}$
+$\texttt{\color{teal}{v2.1.1}}$
 
-## Screenshot clock
+<br>
+
 <div align="center">
-    <img alt="picture unable to display" src="assets/img/screenshot_clock.png">
-    <img alt="picture unable to display" src="assets/img/screenshot_settings.png">
+    <img alt="picture unable to display" src="assets/img/responsive_design.png">
 </div>
 
 ### Technology 
@@ -52,29 +52,36 @@ $\texttt{\color{teal}{v1.4.0}}$
 
 <br>
 
+<div align="center">
+    <img src="assets/img/screenshot_big_resolution1.png">
+</div>
+<div align="center">
+    <p>In the settings component, a preview for the selected clock design is already prepared and displays currently a placeholder (figure above). With an upcoming update, a downscaled version of the selected clock design will appear and can be hidden by the regarding setting.</p>
+</div>
+
+<br>
+
 ## Updates
 
-### $\textsf{last\ update\ 1.3.0\ >>\ {\color{pink}1.4.0}}$
+[list of all updates](docs/update_protocol.md)
+### $\textsf{last\ update\ 1.4.0\ >>\ {\color{pink}2.1.1}}$
 
-- $\textsf{\color{orange}Change:}$ New setting added to hide navbar and show only on click (somewhere in body) or display permanently.
-- $\textsf{\color{orange}Change:}$ Hint of "am" and "pm" to differ daytime added to analog design.
-- $\textsf{\color{orange}Change:}$ Number of color pickers in settings will appear regarding which design is selected.
+- $\textsf{\color{cyan}Change:}$ Second analog design ('Analog #2') for clock component added. There are now multiple designs for the clock component available to select and partly customize.
+- $\textsf{\color{green}Change:}$ Responsive design for clock and settings component added.
+- $\textsf{\color{red}Bugfix:}$ For every selected design, only the regarding settings are available. [Before: Settings were enabled which didn't apply to the selected design like 'dateformat' for 'Analog #1', which does not display the date.]
 
 <br>
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
     <dd>- option to select ger/eng</dd>
-    <dd>- add responsive design to clock component</dd>
     <dd>- add real-live working mini figures of clock design as preview in settings</dd>
-    <dd>- option to select different time formats</dd>
 </dl>
 
 <br>
 
 ### Aimed objectives for next $\textsf{\color{cyan}major}$ update:
 <dl>
-    <dd>- different clock designs to select from</dd>
     <dd>- additional timer functionality</dd>
     <dd>- additional alarm functionality</dd>
     <dd>- additional world clock (api)</dd>
