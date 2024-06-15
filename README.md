@@ -1,5 +1,5 @@
 # yqni13 WEB_clock
-$\texttt{\color{teal}{v2.1.2}}$
+$\texttt{\color{teal}{v2.1.4}}$
 
 <br>
 
@@ -67,10 +67,10 @@ $\texttt{\color{teal}{v2.1.2}}$
 
 <center>
 
-| <img src="assets/favicon/firefox_logo50.ico"> | <img src="assets/favicon/chrome_logo50.ico"> | <img src="assets/favicon/opera_logo50.ico"> | <img src="assets/favicon/edge_logo50.ico"> |
-|:------:|:------:|:------:|:------:|
-|Firefox | Chrome | Opera  | Edge   |
-|Yes     | Yes    | Yes    | Yes    |
+<img src="assets/favicon/firefox_logo50.ico"> | <img src="assets/favicon/chrome_logo50.ico"> | <img src="assets/favicon/opera_logo50.ico"> | <img src="assets/favicon/edge_logo50.ico"> | <img src="assets/favicon/duckduckgo_logo50.ico"> | <img src="assets/favicon/brave_logo50.ico">
+|:------:|:------:|:------:|:------:|:------:|:------:|
+|Firefox | Chrome | Opera  | Edge   | DuckGo | Brave  |
+|Yes     | Yes    | Yes    | Yes    | Yes    | Yes    |
 
 </center>
 
@@ -79,9 +79,11 @@ $\texttt{\color{teal}{v2.1.2}}$
 ## Updates
 
 [list of all updates](docs/update_protocol.md)
-### $\textsf{last\ update\ 2.1.1\ >>\ {\color{pink}2.1.2}}$
+### $\textsf{last\ update\ 2.1.1\ >>\ {\color{pink}2.1.4}}$
 
-- $\textsf{\color{red}Bugfix:}$ Navigation menu in mobile version is now located at top instead of bottom and available by every browser. [Before: Navigation menu was displayed at bottom in mobile version. Some browsers overlap with their own navigation menu at the same place to make the application nav unreachable (or more complicated).]
+- $\textsf{\color{teal}Addition:}$ New favicon added.
+- $\textsf{\color{red}Bugfix:}$ Settings component does not show unwanted scrollbar. [Before: If height was not big enough, a scrollbar for the settings content was displayed.]
+- $\textsf{\color{red}Bugfix:}$ The clock design 'Analog #2' is now fully responsive. [Before: The clock design 'Analog #2' was not resposive for a resolution < 500px width.]
 
 <br>
 

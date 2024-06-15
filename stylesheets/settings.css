@@ -26,7 +26,7 @@
     justify-content: center;
     overflow: auto;
     align-content: center;
-
+    scrollbar-width: none;
     -ms-flex-align: center;
     -webkit-align-items: center;
     -webkit-box-align: center;

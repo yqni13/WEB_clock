@@ -4,6 +4,12 @@
 
 <br>
 
+### 2024/6/15 - $\textsf{update\ 2.1.2\ >>\ {\color{pink}2.1.4}}$
+
+- $\textsf{\color{teal}Addition:}$ New favicon added.
+- $\textsf{\color{red}Bugfix:}$ Settings component does not show unwanted scrollbar. [Before: If height was not big enough, a scrollbar for the settings content was displayed.]
+- $\textsf{\color{red}Bugfix:}$ The clock design 'Analog #2' is now fully responsive. [Before: The clock design 'Analog #2' was not resposive for a resolution < 500px width.]
+
 ### 2024/6/15 - $\textsf{update\ 2.1.1\ >>\ {\color{pink}2.1.2}}$
 
 - $\textsf{\color{red}Bugfix:}$ Navigation menu in mobile version is now located at top instead of bottom and available by every browser. [Before: Navigation menu was displayed at bottom in mobile version. Some browsers overlap with their own navigation menu at the same place to make the application nav unreachable (or more complicated).]

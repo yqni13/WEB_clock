@@ -24,6 +24,11 @@
         }
     }
 
+    .wrapper_clock_design2 {
+        width: 40vw;
+        height: 40vw;
+    }
+
     #wrapper-settings {
         flex-direction: column;
         .settings-preview {
@@ -107,6 +112,11 @@
         width: 40vw;
     }
 
+    .wrapper_clock_design2 {
+        width: 50vw;
+        height: 50vw;
+    }
+
     #wrapper-settings {
         .settings-preview {
             width: 40%!important;
@@ -144,6 +154,11 @@
         #clock_date_design1 {
             font-size: 6vw!important;
         }
+    }
+
+    .wrapper_clock_design2 {
+        width: 60vw;
+        height: 60vw;
     }
 
     .wrapper_clock_design3 {
@@ -208,6 +223,17 @@
         width: 60vw;
     }
 
+    .wrapper_clock_design2 {
+        width: 70vw;
+        height: 70vw;
+        padding: 12px!important;
+        margin: 30px!important;
+        #wrapper_am_design2,
+        #wrapper_pm_design2 {
+            font-size: 1.4em!important;
+        }
+    }
+
     #wrapper-settings {
 
         .settings-content {
@@ -234,6 +260,17 @@
                     height: 30px!important;
                 }
             }
+        }
+    }
+
+    .wrapper_clock_design2 {
+        width: 70vw;
+        height: 70vw;
+        padding: 10px!important;
+        margin: 25px!important;
+        #wrapper_am_design2,
+        #wrapper_pm_design2 {
+            font-size: 1.3em!important;
         }
     }
 
