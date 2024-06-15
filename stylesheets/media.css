@@ -15,7 +15,13 @@
     }
 
     .wrapper_clock_design1 {
-        width: 40vw;
+        width: 30vw;
+        #clock_time_design1 {
+            font-size: 6vw!important;
+        }
+        #clock_date_design1 {
+            font-size: 3vw!important;
+        }
     }
 
     #wrapper-settings {
@@ -26,6 +32,7 @@
             border-right: none;
             border-bottom: solid 1px var(--border-color);
             text-align: -webkit-center;
+            text-align: -moz-center;
             .settings-preview-box {
                 margin: 25px 0;
                 width: 100%;
@@ -42,6 +49,7 @@
             flex-wrap: wrap!important;
             height: 65%!important;
             margin: 25px 0;
+            scrollbar-width: none;
             align-content: baseline!important;
 
             .setting-options {
@@ -60,12 +68,12 @@
     }
 
     .nav-bar {
-        order: 2!important;
+        order: 1!important;
         width: 100%;
         height: 5rem;
         justify-content: center;
         border-right: none!important;
-        border-top: solid 1px var(--border-color) !important;
+        border-bottom: solid 1px var(--border-color) !important;
         ul {
             height: auto;
             flex-direction: row;
@@ -91,12 +99,12 @@
     }
 
     .container {
-        order: 1!important;
+        order: 2!important;
         height: 100%;
     }
 
     .wrapper_clock_design1 {
-        width: 45vw;
+        width: 40vw;
     }
 
     #wrapper-settings {
