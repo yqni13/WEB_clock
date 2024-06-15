@@ -4,6 +4,10 @@
 
 <br>
 
+### 2024/6/15 - $\textsf{update\ 2.1.1\ >>\ {\color{pink}2.1.2}}$
+
+- $\textsf{\color{red}Bugfix:}$ Navigation menu in mobile version is now located at top instead of bottom and available by every browser. [Before: Navigation menu was displayed at bottom in mobile version. Some browsers overlap with their own navigation menu at the same place to make the application nav unreachable (or more complicated).]
+
 ### 2024/6/15 - $\textsf{update\ 1.4.0\ >>\ {\color{pink}2.1.1}}$
 
 - $\textsf{\color{cyan}Change:}$ Second analog design ('Analog #2') for clock component added. There are now multiple designs for the clock component available to select and partly customize.
